@@ -1,0 +1,26 @@
+:root {
+    --black: #111;
+    --grey: #bbbedb;
+    --white: #ffffff;
+
+    --light-blue: #3273fa;
+    --darker-blue: #070720;
+    --dark-blue: #11112a;
+    --base-blue: #191937;
+    --base-red: #ff2528;
+
+    --hover-blue: #313160;
+    --hover-red: #f2494c;
+
+    --tr: .2s;
+    --rd: 5px;
+    --ot: 5px solid var(--light-blue);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}

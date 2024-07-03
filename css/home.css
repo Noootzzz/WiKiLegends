@@ -1,0 +1,85 @@
+#home {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#home h1 {
+    text-align: center;
+}
+
+#home-choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    gap: 5rem;
+}
+
+#home-choice section {
+    width: 25vw;
+    min-height: 70vh;
+    background-color: var(--darker);
+    border-radius: var(--rd);
+}
+
+#home-choice a {
+    display: flex;
+    width: 25vw;
+    min-height: 70vh;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: var(--rd);
+}
+
+#home-choice a img {
+    width: 100%;
+    border-radius: var(--rd);
+    background-color: var(--accent);
+    transition: var(--tr);
+}
+
+#home-choice a:hover img {
+    transform: scale(1.1);
+}
+
+/* #home-choice #items {
+
+} */
+
+/* #home-choice #champions {
+
+} */
+
+/* #home-choice #runes {
+
+} */
+
+
+@media screen and (max-width: 1024px) {
+    #home-choice {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #home-choice section, #home-choice a{
+        width: 45vw;
+        min-height: 25vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #home {
+        padding: 2rem 0 0 0;
+    }
+    #home-choice {
+        gap: 3rem;
+    }
+    #home-choice section, #home-choice a{
+        width: 40vw;
+        min-height: 20vh;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    
+}

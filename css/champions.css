@@ -1,0 +1,44 @@
+#search-champion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search-champion #search-champion-input {
+    padding: 2rem 4rem;
+    font-size: 2em;
+    border-radius: var(--rd);
+    border: none;
+}
+
+#search-champion-input:focus {
+    outline: var(--ot);
+}
+
+#champions-suggestions {
+    height: 15vh;
+    width: 25vw;
+    padding: 0rem 4rem;
+    background-color: var(--darker);
+    cursor: pointer;
+    overflow: auto;
+}
+
+#champions-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5rem;
+    padding: 0 2rem;
+}
+
+#champions-list li a img {
+    border-radius: var(--rd);
+    transition: var(--tr);
+}
+
+#champions-list li:hover a img {
+    filter:brightness(1.4);
+}

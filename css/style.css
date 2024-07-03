@@ -1,6 +1,4 @@
-@import url(./variables.css);
-
-body {
+/* body {
     min-height: 100vh;
     padding: 15vh 0 10vh 0;
     background-color: var(--dark-blue);
@@ -138,4 +136,4 @@ a {
     width: 100%;
     transition: var(--tr);
     border-radius: var(--rd);
-}
+} */

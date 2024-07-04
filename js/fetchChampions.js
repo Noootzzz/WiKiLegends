@@ -1,12 +1,15 @@
 const homeSearchChampionInput = document.querySelector("#search-champion-input")
 const homeChampionsSuggestions = document.querySelector("#champions-suggestions")
 const championsList = document.querySelector("#champions-list")
-const LOL_API_CHAMPIONS_URL = "https://ddragon.leagueoflegends.com/cdn/14.12.1/data/en_US/champion.json"
+const VERSION = "14.13.1"
+const API_CHAMPIONS = `https://ddragon.leagueoflegends.com/cdn/${VERSION}/data/en_US/champion.json`
+const IMG_SQUARE_CHAMPION = `https://ddragon.leagueoflegends.com/cdn/${VERSION}/img/champion`
+const IMG_RECTANGLE_CHAMPION = "https://ddragon.leagueoflegends.com/cdn/img/champion/loading"
 
 // ASYNC FUNCTION TO FETCH LEAGUE OF LEGENDS API ===> CHAMPIONS
 async function fetchLolApi() {
     try {
-        return await fetch(LOL_API_CHAMPIONS_URL).then((response) => response.json())
+        return await fetch(API_CHAMPIONS).then((response) => response.json())
     
     } catch (error) {
         console.error(`FETCH LOL API ERROR : ${error}`)
@@ -43,6 +46,15 @@ async function getAllChampionsIds() {
     }
 }
 
+// FUNCTION TO CREATE THE URL TO GET THE CHAMPION RECTANGLE IMAGE FROM THE ID
+function getRectangleChampionImageURL(championId) {
+    return `${IMG_RECTANGLE_CHAMPION}/${championId}_0.jpg`
+}
+// FUNCTION TO CREATE THE URL TO GET THE CHAMPION SQUARE IMAGE FROM THE ID
+function getSquareChampionImageURL(championId) {
+    return `${IMG_SQUARE_CHAMPION}/${championId}.png`
+}
+
 // ASYNC FUNCTION TO GET ALL THE CHAMPIONS IMAGES AND NAMES
 async function getAllChampionsImagesNames() {
     try {
@@ -50,12 +62,14 @@ async function getAllChampionsImagesNames() {
         let champions = await getChampionsDatas()
         // list of all the names of the champions 
         let championsNamesList = []
-        // list of all the loading images of the champions
+        // list of all the RECTANGLE images of the champions
         let championsImagesList = []
         // loop to push images and names inside the lists
         for (let champion in champions) {
             championsNamesList.push(champions[champion].name)
-            championsImagesList.push(`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champions[champion].id}_0.jpg`)
+            // push the champion id into the list
+            const championdId = champions[champion].id
+            championsImagesList.push(getChampionImageURL(championdId))
         }
         return [championsNamesList, championsImagesList]
 
@@ -65,9 +79,9 @@ async function getAllChampionsImagesNames() {
 }
 
 // FUNCTION TO DISPLAY ALL CHAMPIONS
-async function displayAllChampions() {
+async function displayAllChampions(displayChampionsLocation, imageSize) {
     // clear the current list
-    championsList.innerHTML = ''
+    displayChampionsLocation.textContent = ''
 
     // get all the champions datas
     let championsDatas = await getChampionsDatas()
@@ -80,9 +94,11 @@ async function displayAllChampions() {
         const img = document.createElement("img")
         const h2 = document.createElement("h2")
 
-        a.href = `champion.html?champion=${championsDatas[champion].id}`
-        img.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championsDatas[champion].id}_0.jpg`
-        img.alt = `${championsDatas[champion].id}`
+        const championId = championsDatas[champion].id;
+        a.href = `champion.html?champion=${championId}`
+        
+        img.src = imageSize === "square" ? getSquareChampionImageURL(championId) : imageSize === "rectangle" ? getRectangleChampionImageURL(championId) : null
+        img.alt = `${championId}`
         h2.textContent = championsDatas[champion].name
 
         a.appendChild(img)
@@ -90,18 +106,18 @@ async function displayAllChampions() {
         fragment.appendChild(li)
     }
 
-    championsList.appendChild(fragment)
+    displayChampionsLocation.appendChild(fragment)
 }
 
 // FUNCTION TO FILTER CHAMPIONS
 function filterChampions() {
     const searchValue = homeSearchChampionInput.value.toLowerCase();
-    const champions = championsList.querySelectorAll('li');
+    const champions = homeChampionsSuggestions.querySelectorAll('li');
 
     champions.forEach(champion => {
         const name = champion.querySelector('h2').textContent.toLowerCase();
         const id = champion.querySelector('img').alt.toLowerCase();
-        champion.style.display = (name.includes(searchValue) || id.includes(searchValue)) ? 'block' : 'none';
+        champion.style.display = (name.includes(searchValue) || id.includes(searchValue)) ? 'flex' : 'none';
     });
 }
 
@@ -109,4 +125,7 @@ function filterChampions() {
 homeSearchChampionInput.addEventListener('input', filterChampions)
 
 // Initial display of champions
-displayAllChampions()
+displayAllChampions(championsList, "rectangle")
+displayAllChampions(homeChampionsSuggestions, "square")
+
+//ajouter pleins de filtres comme par letrre par classe(assassins, tank...)

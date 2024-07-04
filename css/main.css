@@ -1,5 +1,7 @@
 /* VARIABLES */
 @import url(./variables.css);
+/* HEADER */
+@import url(./header.css);
 /* HOME */
 @import url(./home.css);
 /* ALL CONTENT DISPLAY */

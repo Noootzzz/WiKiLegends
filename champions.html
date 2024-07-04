@@ -7,19 +7,25 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+    <header>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./items.html">Items</a></li>
+            <li><a href="./champions.html">Champions</a></li>
+            <li><a href="./runes.html">Runes</a></li>
+        </ul>
+    </header>
     <main id="champions">
-        <header>
-
-        </header>
         <h1>Search A Champion</h1>
         <div id="search-champion">
-            <input type="text" id="search-champion-input" placeholder="Search by names...">
-            <div id="champions-suggestions" class="hidden">
-                <!-- <ul id="champions-suggestions-list">
-                    <li><a href="./single-champion.html"><img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/Varus.png"></img><h3>Varus</h3></a></li>
-                    <li><a href="./single-champion.html"><img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/Aatrox.png"></img><h3>Aatrox</h3></a></li>
-                </ul> -->
+            <div class="input-error">
+                <input type="text" id="search-champion-input" placeholder="Search by names..." autocomplete="off">
+                <div id="error-message" class="error">Result Not Found.</div>
             </div>
+            <ul id="champions-suggestions" class="hidden">
+                <!-- <li><a href="./single-champion.html"><img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/Varus.png"><h3>Varus</h3></a></li>
+                <li><a href="./single-champion.html"><img src="https://ddragon.leagueoflegends.com/cdn/14.12.1/img/champion/Aatrox.png"><h3>Aatrox</h3></a></li> -->
+            </ul>
         </div>
         <ul id="champions-list">
             <!-- <li>
@@ -29,6 +35,7 @@
                 <h2>Aatrox</h2>
             </li> -->
         </ul>
+    </main>
     <!-- FUSE SEARCH JS LIBRARY -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script> -->
     <script src="./js/fetchChampions.js"></script>

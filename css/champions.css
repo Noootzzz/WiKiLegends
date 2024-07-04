@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     gap: 5rem;
-    padding: 5rem 0;
+    padding: 15rem 0;
 }
 
 #search-champion {
@@ -35,6 +35,7 @@
     width: 30vw;
     padding: 0rem 2rem;
     border-radius: var(--rd);
+    outline: var(--ot);
     background-color: var(--darker);
     cursor: pointer;
     overflow: auto;
@@ -59,21 +60,28 @@
 }
 
 #champions-suggestions li{
-    color: var(--white);
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 1.5em;
     padding: 1rem;
-    width: 100%;
+    width: 90%;
     height: 5rem;
-    border: var(--br);
-    border-radius: var(--rd);
+    border-left: 5px solid var(--light);
     transition: var(--tr);
 }
 
-#champions-suggestions li img {
-    width: 50%;
+#champions-suggestions li a {
+    color: var(--white);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#champions-suggestions li a img {
+    width: 4rem;
+    border-radius: var(--rd);
 }
 
 #champions-list {
@@ -81,29 +89,27 @@
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 5rem;
-    padding: 0 5rem;
+    gap: 3rem;
+    padding: 4rem
+     5rem;
 }
 
 #champions-list li {
     background-color: var(--dark);
     border: var(--br);
     border-radius: var(--rd);
-    width: 10rem;
+    width: 14rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0 0 .5rem 0;
     overflow: hidden;
     gap: 1rem;
 }
 
-#champions-list li h2{
-    border-radius: 0 0 var(--rd) var(--rd);
-    background-color: var(--dark);
+#champions-list li a {
     width: 100%;
-    z-index: 20;
+    height: 100%;
 }
 
 #champions-list li a img {
@@ -116,6 +122,16 @@
 }
 
 #champions-list li:hover a img {
-    /* filter:brightness(1.2); */
     transform: scale(1.2);
+}
+
+#champions-list li h2{
+    position: relative;
+    border-radius: 0 0 var(--rd) var(--rd);
+    background-color: var(--dark);
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 20;
+    border-top: var(--br);
+    color: var(--white);
 }

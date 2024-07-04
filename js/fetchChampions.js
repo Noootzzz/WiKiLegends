@@ -101,9 +101,15 @@ async function displayAllChampions(displayChampionsLocation, imageSize) {
         img.alt = `${championId}`
         h2.textContent = championsDatas[champion].name
 
-        a.appendChild(img)
-        li.append(a, h2)
+        a.append(img, h2)
+        li.appendChild(a)
         fragment.appendChild(li)
+        // <li>
+        //     <a href="">
+        //         <img src="" alt="">
+        //         <h2></h2>
+        //     </a>
+        // </li>
     }
 
     displayChampionsLocation.appendChild(fragment)

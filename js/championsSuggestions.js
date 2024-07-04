@@ -16,5 +16,10 @@ function updateVisibility() {
 // Ajout des événements pour mettre à jour la visibilité
 ["input", "focus", "blur"].forEach(event => searchChampionInput.addEventListener(event, updateVisibility));
 
+// Empêcher le blur lors du clic sur une suggestion
+championsSuggestions.addEventListener("mousedown", (event) => {
+    event.preventDefault();
+});
+
 // Appeler la fonction une première fois pour régler l'état initial
 updateVisibility();

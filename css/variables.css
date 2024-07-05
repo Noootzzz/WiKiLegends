@@ -16,7 +16,7 @@
     --hover-accent: #f2494c;
 
     --tr: .2s;
-    --rd: .75rem;
+    --rd: .25rem;
     --ot: 5px solid var(--light);
     --br: 2px solid var(--light);
 }

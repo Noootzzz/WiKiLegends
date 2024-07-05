@@ -104,12 +104,6 @@ async function displayAllChampions(displayChampionsLocation, imageSize) {
         a.append(img, h2)
         li.appendChild(a)
         fragment.appendChild(li)
-        // <li>
-        //     <a href="">
-        //         <img src="" alt="">
-        //         <h2></h2>
-        //     </a>
-        // </li>
     }
 
     displayChampionsLocation.appendChild(fragment)
@@ -134,4 +128,4 @@ homeSearchChampionInput.addEventListener('input', filterChampions)
 displayAllChampions(championsList, "rectangle")
 displayAllChampions(homeChampionsSuggestions, "square")
 
-//ajouter pleins de filtres comme par letrre par classe(assassins, tank...)
+//ajouter pleins de filtres comme par letrre, par classe(assassins, tank...)

@@ -32,7 +32,7 @@
     position: absolute;
     top: 8rem;
     max-height: 25vh;
-    width: 30vw;
+    width: 35rem;
     padding: 0rem 2rem;
     border-radius: var(--rd);
     outline: var(--ot);
@@ -90,8 +90,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 3rem;
-    padding: 4rem
-     5rem;
+    padding: 4rem 5rem;
 }
 
 #champions-list li {
@@ -134,4 +133,37 @@
     z-index: 20;
     border-top: var(--br);
     color: var(--white);
+}
+
+@media screen and (max-width: 1024px) {
+    #search-champion #search-champion-input {
+        padding: 1.5rem 2.5rem;
+        font-size: 1.5rem;
+    }
+    #champions-suggestions {
+        width: 25rem;
+        height: 8rem;
+    }
+    #champions-suggestions li {
+        font-size: 1em;
+        height: 3rem;
+    }
+    #champions-suggestions li a img  {
+        width: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #search-champion #search-champion-input {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    #champions-suggestions {
+        width: 20rem;
+        height: 7rem;
+        top: 5rem;
+    }
+    #champions-suggestions li {
+        font-size: .7em;
+    }
 }

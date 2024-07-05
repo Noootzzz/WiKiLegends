@@ -13,6 +13,6 @@
 /* @import url(./runes.css); */
 
 /* SINGLE CONTENT DISPLAY */
-/* @import url(./item.css); */
-/* @import url(./champion.css); */
+@import url(./item.css);
+@import url(./champion.css);
 /* @import url(./rune.css); */

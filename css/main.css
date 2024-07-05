@@ -1,14 +1,18 @@
 /* VARIABLES */
 @import url(./variables.css);
+
 /* HEADER */
 @import url(./header.css);
+
 /* HOME */
 @import url(./home.css);
+
 /* ALL CONTENT DISPLAY */
 @import url(./items.css);
 @import url(./champions.css);
-@import url(./runes.css);
+/* @import url(./runes.css); */
+
 /* SINGLE CONTENT DISPLAY */
-@import url(./item.css);
-@import url(./champion.css);
-@import url(./rune.css);
+/* @import url(./item.css); */
+/* @import url(./champion.css); */
+/* @import url(./rune.css); */

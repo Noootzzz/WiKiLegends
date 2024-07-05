@@ -1,18 +1,17 @@
-let championId = ""
+import LATEST_VERSION from './fetchLolVersion.js'
 const championDatasSection = document.querySelector("#champion-datas")
-let pageTitle = document.title
+const API_CHAMPION = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/data/en_US/champion`
+let championId = ""
 
 // ASYNC FUNCTION TO FETCH ONLY 1 CHAMPION INFORMATIONS WITH THE URL PARAMS
 async function fetchChampion() {
     try {
-        // api url
-        const SINGLE_CHAMPION_URL = "https://ddragon.leagueoflegends.com/cdn/14.12.1/data/en_US/champion"
         // GET THE CHAMPION ID FROM THE URL PARAMS
         championId = new URLSearchParams(window.location.search).get("champion")
         // full built url
-        const FULL_URL = `${SINGLE_CHAMPION_URL}/${championId}.json`
+        const API_CHAMPION_FULL_URL = `${API_CHAMPION}/${championId}.json`
         // fetch the champion informations with the url params
-        return await fetch(FULL_URL).then((response) => response.json())
+        return await fetch(API_CHAMPION_FULL_URL).then((response) => response.json())
         
     } catch (error) {
         console.error(`FETCH CHAMPION ERROR : ${error}`)

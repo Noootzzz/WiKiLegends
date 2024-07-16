@@ -19,10 +19,21 @@ body::-webkit-scrollbar {
         @apply w-[60%] rounded-md;
     }
 
+    .custom-damage {
+        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md px-2.5 py-0.5 text-xs font-semibold;
+    }
 
+    .custom-damage-main {
+        @apply border-primary;
+    }
 
+    .custom-damage-secondary {
+        @apply border-transparent;
+    }
 
-
+    .more-btn {
+        @apply flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-16 py-2;
+    }
 
 
     .custom-role {
@@ -61,20 +72,4 @@ body::-webkit-scrollbar {
 
 
 
-
-    .custom-damage {
-        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md px-2.5 py-0.5 text-xs font-semibold;
-    }
-
-    .custom-damage-main {
-        @apply border-primary;
-    }
-
-    .custom-damage-secondary {
-        @apply border-transparent;
-    }
-
-    .more-btn {
-        @apply flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-16 py-2;
-    }
 }

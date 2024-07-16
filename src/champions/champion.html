@@ -11,13 +11,30 @@
 <body
     class="bg-gradient-to-r from-background from-30% via-dark to-secondary min-h-screen relative flex justify-start items-center flex-col gap-20">
 
-    <footer>
+    <header
+        class="flex justify-center items-center text-white text-lg font-semibold bg-background w-full p-4 sm:px-12 sm:py-10 border-b">
+        <nav class="hidden sm:flex justify-center items-center w-full sm:px-20">
+            <ul class="flex justify-between items-center w-full">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../items/items.html">Items</a></li>
+                <li><a href="../champions/champions.html">Champions</a></li>
+                <li><a href="../runes/runes.html">Runes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex flex-col justify-start items-center gap-20 w-full text-white">
+
+    </main>
+
+    <!-- <footer>
         <h2></h2>
-    </footer>
+    </footer> -->
 
 
 
-    <script src="../js/dynamicDate.js"></script>
+    <script type="module" src="../js/displaySingleChampion.js"></script>
+    <!-- <script src="../js/dynamicDate.js"></script> -->
 </body>
 
 </html>

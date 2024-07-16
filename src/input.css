@@ -5,6 +5,11 @@
 body::-webkit-scrollbar {
     display: none;
 }
+#filters label:has(> input[type="checkbox"]:checked),
+#filters label:has(> input[type="radio"]:checked) {
+    outline: 2px solid #3576DF;
+    color: #F7F9FB;
+}
 
 @layer components {
     .custom-tr {

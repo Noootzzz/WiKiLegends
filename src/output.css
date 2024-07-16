@@ -785,12 +785,20 @@ video {
   width: 33.333333%;
 }
 
+.w-\[2\.5vw\] {
+  width: 2.5vw;
+}
+
 .w-auto {
   width: auto;
 }
 
 .w-full {
   width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-col {
@@ -835,6 +843,10 @@ video {
 
 .gap-20 {
   gap: 5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-8 {
@@ -892,6 +904,10 @@ video {
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(53 118 223 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-gradient-to-r {
@@ -979,6 +995,11 @@ video {
   line-height: 2.5rem;
 }
 
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -992,16 +1013,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -1070,12 +1081,22 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .duration-tr {
   transition-duration: 0.2s;
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+#filters label:has(> input[type="checkbox"]:checked),
+#filters label:has(> input[type="radio"]:checked) {
+  outline: 2px solid #3576DF;
+  color: #F7F9FB;
 }
 
 .file\:border-0::file-selector-button {
@@ -1105,8 +1126,35 @@ body::-webkit-scrollbar {
   color: rgb(202 204 224 / var(--tw-text-opacity));
 }
 
+.hover\:bg-blue-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-primary\/80:hover {
   background-color: rgb(53 118 223 / 0.8);
+}
+
+.hover\:bg-grey:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 204 224 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-grey\/30:hover {
+  background-color: rgb(202 204 224 / 0.3);
+}
+
+.hover\:bg-grey\/10:hover {
+  background-color: rgb(202 204 224 / 0.1);
+}
+
+.hover\:bg-grey\/5:hover {
+  background-color: rgb(202 204 224 / 0.05);
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(247 249 251 / var(--tw-text-opacity));
 }
 
 .focus-visible\:outline-none:focus-visible {
@@ -1149,6 +1197,10 @@ body::-webkit-scrollbar {
 
   .sm\:w-2\/5 {
     width: 40%;
+  }
+
+  .sm\:w-\[2vw\] {
+    width: 2vw;
   }
 
   .sm\:flex-row {
@@ -1198,6 +1250,18 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 768px) {
+  .md\:w-\[1vw\] {
+    width: 1vw;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:gap-10 {
+    gap: 2.5rem;
+  }
+
   .md\:gap-20 {
     gap: 5rem;
   }

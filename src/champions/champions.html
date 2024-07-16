@@ -35,6 +35,77 @@
                 id="champion-search-input" placeholder="Type a name..." autocomplete="off" value="">
         </div>
 
+        <div id="filters"
+            class="text-grey flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10 w-3/4 p-10">
+            <fieldset class="flex justify-center items-center gap-2">
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center flex-col gap-2">
+                    <input type="radio" name="sortOrder" id="sortAlphabetical" value="alphabetical" checked
+                        class="hidden">
+                    <span class="radio-label">Alphabetical</span>
+                </label>
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center flex-col gap-2">
+                    <input type="radio" name="sortOrder" id="sortReverseAlphabetical" value="reverseAlphabetical"
+                        class="hidden">
+                    <span class="radio-label">Reverse Alphabetical</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="flex justify-center items-center gap-2">
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    <input type="checkbox" id="roleAssassin" value="Assassin" class="hidden">
+                    <img src="../img/controller_icon.webp" alt="assassin icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
+                    <span class="checkbox-label">Assassin</span>
+                </label>
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    <input type="checkbox" id="roleFighter" value="Fighter" class="hidden">
+                    <img src="../img/fighter_icon" alt="fighter icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
+                    <span class="checkbox-label">Fighter</span>
+                </label>
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    <input type="checkbox" id="roleMage" value="Mage" class="hidden">
+                    <img src="../img/mage_icon" alt="mage icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
+                    <span class="checkbox-label">Mage</span>
+                </label>
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    <input type="checkbox" id="roleSupport" value="Support" class="hidden">
+                    <img src="../img/controller_icon.webp" alt="support icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
+                    <span class="checkbox-label">Support</span>
+                </label>
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    <input type="checkbox" id="roleTank" value="Tank" class="hidden">
+                    <img src="../img/tank_icon.webp" alt="tank icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
+                    <span class="checkbox-label">Tank</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="flex justify-center items-center gap-2">
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    <input type="radio" name="damageType" id="damageMagic" value="Magic" class="hidden">
+                    <img src="../img/magic_icon.png" alt="magic icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
+                    <span class="radio-label">Magic</span>
+                </label>
+                <label
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    <input type="radio" name="damageType" id="damagePhysic" value="Physic" class="hidden">
+                    <img src="../img/armor_icon.png" alt="armor icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
+                    <span class="radio-label">Physic</span>
+                </label>
+            </fieldset>
+
+            <button id="resetFilters"
+                class="border rounded-md cursor-pointer border-border p-4 text-white bg-transparent hover:bg-blue-500 hover:text-white transition duration-300">Reset
+                Filters</button>
+        </div>
+
+
         <div class="relative w-full text-white">
             <table id="champions-list" class="m-auto w-3/4">
                 <thead class="border-border text-lg">
@@ -63,6 +134,7 @@
 
     <script type="module" src="../js/displayAllChampions.js"></script>
     <script src="../js/searchChampion.js"></script>
+    <script src="../js/filtersChampions.js"></script>
     <script src="../js/dynamicDate.js"></script>
 
 </body>

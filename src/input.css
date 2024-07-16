@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+@layer components {
+    .custom-tr {
+        @apply hover:bg-secondary border-b border-border duration-tr;
+    }
+
+    .custom-td {
+        @apply p-4;
+    }
+
+    .avatar-img {
+        @apply w-[60%] rounded-md;
+    }
+
+
+
+
+
+
+
+    .custom-role {
+        @apply bg-transparent shadow-sm flex items-center justify-center rounded-md border-2 border-background p-3 text-xs font-semibold flex-1;
+    }
+
+    .custom-role-flex {
+        @apply flex justify-between items-center w-full
+    }
+
+    .custom-role-assassin {
+        @apply text-gray-200 bg-pink-700 w-full;
+    }
+
+    .custom-role-mage {
+        @apply text-gray-200 bg-violet-700 w-full;
+    }
+
+    .custom-role-marksman {
+        @apply text-gray-200 bg-yellow-700 w-full;
+    }
+
+    .custom-role-tank {
+        @apply text-gray-200 bg-indigo-700 w-full;
+    }
+
+    .custom-role-fighter {
+        @apply text-gray-200 bg-green-700 w-full;
+    }
+
+    .custom-role-support {
+        @apply text-gray-200 bg-slate-700 w-full;
+    }
+
+
+
+
+
+
+    .custom-damage {
+        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md px-2.5 py-0.5 text-xs font-semibold;
+    }
+
+    .custom-damage-main {
+        @apply border-primary;
+    }
+
+    .custom-damage-secondary {
+        @apply border-transparent;
+    }
+
+    .more-btn {
+        @apply flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-16 py-2;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions</title>
+    <link rel="stylesheet" href="../output.css">
+</head>
+
+
+<body
+    class="bg-gradient-to-r from-background from-30% via-dark to-secondary min-h-screen relative flex justify-start items-center flex-col gap-20">
+    <header
+        class="flex justify-center items-center text-white text-lg font-semibold bg-background w-full p-4 sm:px-12 sm:py-10 border-b">
+        <nav class="hidden sm:flex justify-center items-center w-full sm:px-20">
+            <ul class="flex justify-between items-center w-full">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../items/items.html">Items</a></li>
+                <li><a href="../champions/champions.html">Champions</a></li>
+                <li><a href="../runes/runes.html">Runes</a></li>
+            </ul>
+        </nav>
+        <div>
+            <img src="../images/Caitlyn.png" alt="" class="block sm:hidden w-14">
+        </div>
+    </header>
+
+    <main class="flex flex-col justify-start items-center gap-20 w-full ">
+        <h1
+            class="relative flex flex-wrap items-center justify-center gap-2 text-4xl font-bold max-lg:text-center lg:text-5xl text-white">
+            <span class="rounded-md bg-primary px-2 py-1 lg:px-4 lg:py-2">Champions</span>Collection
+        </h1>
+
+        <div class="space-y-1 flex justify-center flex-col items-center w-full">
+            <input
+                class="shadow-sm h-10 w-2/4 sm:w-2/5 rounded-md caret-white text-white border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-grey focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="champion-search-input" placeholder="Type a name..." autocomplete="off" value="">
+        </div>
+
+        <div class="relative w-full text-white">
+            <table id="champions-list" class="m-auto w-3/4">
+                <thead class="border-border text-lg">
+                    <tr class="border border-border">
+                        <th class="h-12 px-4 text-left align-middle font-medium w-1/12">Avatar</th>
+                        <th class="h-12 px-4 text-left align-middle font-medium w-4/12">Name</th>
+                        <th class="h-12 px-4 text-left align-middle font-medium w-2/12">Categorie</th>
+                        <th class="h-12 px-4 text-left align-middle font-medium w-2/12">Damage</th>
+                        <th class="h-12 px-4 text-left align-middle font-medium w-1/12">Links</th>
+                    </tr>
+                </thead>
+                <tbody id="champions-tbody" class="border border-border text-grey w-auto">
+                    <!-- Rows will be added here dynamically -->
+                </tbody>
+            </table>
+            <div id="error-message"
+                class="text-accent font-bold text-lg rounded-md border border-border text-center w-3/4 p-6 my-4 m-auto hidden">
+                No champions found.</div>
+        </div>
+
+    </main>
+
+    <footer class="flex justify-center items-center p-8 text-grey w-full ">
+        <h2>2024 Boisleux Nathan - All Rights Reserved.</h2>
+    </footer>
+
+    <script type="module" src="../js/displayAllChampions.js"></script>
+    <script src="../js/searchChampion.js"></script>
+
+</body>
+
+</html>

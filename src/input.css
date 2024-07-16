@@ -34,27 +34,27 @@ body::-webkit-scrollbar {
     }
 
     .custom-role-assassin {
-        @apply text-gray-200 bg-pink-700 w-full;
+        @apply text-pink-400 border-pink-700 m-2 w-full;
     }
 
     .custom-role-mage {
-        @apply text-gray-200 bg-violet-700 w-full;
+        @apply text-violet-400 border-violet-700 m-2 w-full;
     }
 
     .custom-role-marksman {
-        @apply text-gray-200 bg-yellow-700 w-full;
+        @apply text-yellow-400 border-yellow-700 m-2 w-full;
     }
 
     .custom-role-tank {
-        @apply text-gray-200 bg-indigo-700 w-full;
+        @apply text-indigo-400 border-indigo-700 m-2 w-full;
     }
 
     .custom-role-fighter {
-        @apply text-gray-200 bg-green-700 w-full;
+        @apply text-green-400 border-green-700 m-2 w-full;
     }
 
     .custom-role-support {
-        @apply text-gray-200 bg-slate-700 w-full;
+        @apply text-slate-400 border-slate-700 m-2 w-full;
     }
 
 

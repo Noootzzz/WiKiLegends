@@ -48,25 +48,6 @@ async function CreateTableRow(championId, championIndex) {
         divTag.textContent = championTag
         divTag.classList.add("custom-role-" + championTag.toLowerCase())
 
-        // if (championTag === "Support") {
-        //     divTag.classList.add("custom-role-support")
-        // }
-        // if (championTag === "Fighter") {
-        //     divTag.classList.add("custom-role-fighter")
-        // }
-        // if (championTag === "Marksman") {
-        //     divTag.classList.add("custom-role-marksman")
-        // }
-        // if (championTag === "Mage") {
-        //     divTag.classList.add("custom-role-mage")
-        // }
-        // if (championTag === "Assassin") {
-        //     divTag.classList.add("custom-role-assassin")
-        // }
-        // if (championTag === "Tank") {
-        //     divTag.classList.add("custom-role-tank")
-        // }
-
         divTags.appendChild(divTag)
     })
 

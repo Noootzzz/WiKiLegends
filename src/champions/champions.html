@@ -11,16 +11,45 @@
 
 
 <body
-    class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen relative flex justify-start items-center flex-col gap-20">
+    class="font-poppins bg-dark overflow-x-hidden min-h-screen relative flex justify-start items-center flex-col gap-20">
     <header
-        class="flex justify-center items-center text-white text-lg font-semibold bg-background w-full p-4 sm:px-12 sm:py-10 border-b">
-        <nav class="hidden sm:flex justify-center items-center w-full sm:px-20">
-            <ul class="flex justify-between items-center w-full">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../items/items.html">Items</a></li>
-                <li><a href="../champions/champions.html">Champions</a></li>
-                <li><a href="../runes/runes.html">Runes</a></li>
-            </ul>
+        class="flex justify-between items-center text-white text-lg font-semibold bg-transparent w-full">
+        <nav class="flex items-center justify-between flex-wrap bg-background p-6 w-full z-10">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <a class="text-white no-underline hover:text-white hover:no-underline" href="../index.html">
+                    <h1
+                        class="relative flex flex-wrap items-center justify-center gap-2 text-sm font-bold max-lg:text-center lg:text-lg text-white">
+                        <span class="rounded-md bg-primary px-2 py-1 lg:px-2 lg:py-1">Wiki</span>Legends
+                    </h1>
+                </a>
+            </div>
+
+            <div class="block lg:hidden">
+                <button id="nav-toggle"
+                    class="flex items-center px-3 py-2 border-2 rounded-md text-white border-white hover:text-primary hover:border-primary">
+                    <svg class="fill-current h-5 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="w-full flex-grow lg:items-center lg:w-auto hidden lg:flex pt-6 lg:pt-0" id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 items-center gap-10">
+                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
+                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="../items/items.html">Items</a>
+                    </li>
+                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
+                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="../champions/champions.html">Champions</a>
+                    </li>
+                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
+                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="../runes/runes.html">Runes</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -143,9 +172,11 @@
         <h2></h2>
     </footer>
 
-    <a href="#" class="bg-primary p-2 rounded-md fixed bottom-3 right-2.5 sm:bottom-5 sm:right-5 md:bottom-7 md:right-7 text-white border-dark">UP</a>
+    <a href="#"
+        class="bg-primary p-2 rounded-md fixed bottom-3 right-2.5 sm:bottom-5 sm:right-5 md:bottom-7 md:right-7 text-white border-dark">UP</a>
 
     <script type="module" src="../js/displayAllChampions.js"></script>
+    <script src="../js/toggleHeader.js"></script>
     <script src="../js/searchChampion.js"></script>
     <script src="../js/filtersChampions.js"></script>
     <script src="../js/dynamicDate.js"></script>

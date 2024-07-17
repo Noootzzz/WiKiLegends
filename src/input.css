@@ -17,15 +17,15 @@ body::-webkit-scrollbar {
     }
 
     .custom-td {
-        @apply p-4;
+        @apply p-1 sm:p-2 md:p-4;
     }
 
     .avatar-img {
-        @apply w-[60%] rounded-md;
+        @apply w-[40%] md:w-[60%] rounded-md;
     }
 
     .custom-damage {
-        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md px-2.5 py-0.5 text-xs font-semibold;
+        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md p-1 sm:px-2.5 sm:py-0.5 text-xs font-semibold;
     }
 
     .custom-damage-main {
@@ -42,11 +42,11 @@ body::-webkit-scrollbar {
 
 
     .custom-role {
-        @apply bg-transparent shadow-sm flex items-center justify-center rounded-md border-2 border-background p-3 text-xs font-semibold flex-1;
+        @apply bg-transparent shadow-sm flex items-center justify-center p-0.5 rounded-md border-2 border-background sm:p-3 text-xs font-semibold flex-1;
     }
 
     .custom-role-flex {
-        @apply flex justify-between items-center w-full
+        @apply flex justify-between items-center sm:flex-row flex-col w-full
     }
 
     .custom-role-assassin {

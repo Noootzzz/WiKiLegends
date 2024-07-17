@@ -6,25 +6,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const roleMage = document.querySelector("#roleMage")
     const roleSupport = document.querySelector("#roleSupport")
     const roleTank = document.querySelector("#roleTank")
+    const roleMarksman = document.querySelector("#roleMarksman")
     const damageMagic = document.querySelector("#damageMagic")
     const damagePhysic = document.querySelector("#damagePhysic")
     const resetFilters = document.querySelector("#resetFilters")
     const championsTable = document.querySelector("#champions-tbody")
 
-    // Event listeners for radio buttons and checkboxes
-    ;[
-        sortOrderAlphabetical,
-        sortOrderReverseAlphabetical,
-        roleAssassin,
-        roleFighter,
-        roleMage,
-        roleSupport,
-        roleTank,
-        damageMagic,
-        damagePhysic,
-    ].forEach(element => {
-        element.addEventListener("change", applyFilters)
-    })
+        // Event listeners for radio buttons and checkboxes
+        ;[
+            sortOrderAlphabetical,
+            sortOrderReverseAlphabetical,
+            roleAssassin,
+            roleFighter,
+            roleMage,
+            roleSupport,
+            roleTank,
+            roleMarksman,
+            damageMagic,
+            damagePhysic,
+        ].forEach(element => {
+            element.addEventListener("change", applyFilters)
+        })
     resetFilters.addEventListener("click", resetAllFilters)
 
     function applyFilters() {
@@ -38,18 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
             )
 
             const showRole =
-                (roleAssassin.checked &&
-                    roleCell.textContent.includes("Assassin")) ||
+                (roleAssassin.checked && roleCell.textContent.includes("Assassin")) ||
                 (roleFighter.checked && roleCell.textContent.includes("Fighter")) ||
                 (roleMage.checked && roleCell.textContent.includes("Mage")) ||
-                (roleSupport.checked &&
-                    roleCell.textContent.includes("Support")) ||
+                (roleSupport.checked && roleCell.textContent.includes("Support")) ||
                 (roleTank.checked && roleCell.textContent.includes("Tank")) ||
+                (roleMarksman.checked && roleCell.textContent.includes("Marksman")) ||
                 (!roleAssassin.checked &&
                     !roleFighter.checked &&
                     !roleMage.checked &&
                     !roleSupport.checked &&
-                    !roleTank.checked)
+                    !roleTank.checked &&
+                    !roleMarksman.checked)
 
             let showDamage = false
             if (damageMagic.checked) {
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             roleMage,
             roleSupport,
             roleTank,
+            roleMarksman,
             damageMagic,
             damagePhysic,
         ].forEach(element => {

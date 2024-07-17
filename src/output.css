@@ -554,6 +554,42 @@ video {
   --tw-contain-style:  ;
 }
 
+#filters label:has(> input[type="checkbox"]:checked):nth-child(1) {
+  --tw-text-opacity: 1;
+  color: rgb(244 114 182 / var(--tw-text-opacity));
+  outline-color: #be185d;
+}
+
+#filters label:has(> input[type="checkbox"]:checked):nth-child(2) {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
+  outline-color: #15803d;
+}
+
+#filters label:has(> input[type="checkbox"]:checked):nth-child(3) {
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity));
+  outline-color: #6d28d9;
+}
+
+#filters label:has(> input[type="checkbox"]:checked):nth-child(4) {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+  outline-color: #a16207;
+}
+
+#filters label:has(> input[type="checkbox"]:checked):nth-child(5) {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+  outline-color: #374151;
+}
+
+#filters label:has(> input[type="checkbox"]:checked):nth-child(6) {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+  outline-color: #1d4ed8;
+}
+
 .custom-tr {
   width: 100%;
   border-bottom-width: 1px;

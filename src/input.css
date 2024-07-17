@@ -12,7 +12,28 @@ body::-webkit-scrollbar {
     color: #F7F9FB;
 }
 
+
 @layer components {
+
+    #filters label:has(> input[type="checkbox"]:checked):nth-child(1) {
+        @apply outline-pink-700 text-pink-400
+    }
+    #filters label:has(> input[type="checkbox"]:checked):nth-child(2) {
+        @apply outline-green-700 text-green-400
+    }
+    #filters label:has(> input[type="checkbox"]:checked):nth-child(3) {
+        @apply outline-violet-700 text-violet-400
+    }
+    #filters label:has(> input[type="checkbox"]:checked):nth-child(4) {
+        @apply outline-yellow-700 text-yellow-400
+    }
+    #filters label:has(> input[type="checkbox"]:checked):nth-child(5) {
+        @apply outline-gray-700 text-gray-400
+    }
+    #filters label:has(> input[type="checkbox"]:checked):nth-child(6) {
+        @apply outline-blue-700 text-blue-400
+    }
+
     .custom-tr {
         @apply hover:bg-secondary border-b border-border duration-tr w-full;
     }

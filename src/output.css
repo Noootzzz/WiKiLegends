@@ -1123,6 +1123,47 @@ video {
   background-color: transparent;
 }
 
+.bg-background\/80 {
+  background-color: rgb(2 8 23 / 0.8);
+}
+
+.bg-background\/0 {
+  background-color: rgb(2 8 23 / 0);
+}
+
+.bg-background\/90 {
+  background-color: rgb(2 8 23 / 0.9);
+}
+
+.bg-background\/20 {
+  background-color: rgb(2 8 23 / 0.2);
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 249 251 / var(--tw-bg-opacity));
+}
+
+.bg-grey {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 204 224 / var(--tw-bg-opacity));
+}
+
+.bg-border {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.bg-hover-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 49 96 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }

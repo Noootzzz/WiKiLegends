@@ -5,6 +5,7 @@
 body::-webkit-scrollbar {
     display: none;
 }
+
 #filters label:has(> input[type="checkbox"]:checked),
 #filters label:has(> input[type="radio"]:checked) {
     outline: 2px solid #3576DF;
@@ -13,11 +14,15 @@ body::-webkit-scrollbar {
 
 @layer components {
     .custom-tr {
-        @apply hover:bg-secondary border-b border-border duration-tr;
+        @apply hover:bg-secondary border-b border-border duration-tr w-full;
     }
 
     .custom-td {
         @apply p-1 sm:p-2 md:p-4;
+    }
+
+    .custom-td:nth-child(2) {
+        @apply text-xs sm:text-lg sm:w-auto w-full;
     }
 
     .avatar-img {
@@ -25,7 +30,7 @@ body::-webkit-scrollbar {
     }
 
     .custom-damage {
-        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md p-1 sm:px-2.5 sm:py-0.5 text-xs font-semibold;
+        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md p-0.5 sm:px-2.5 sm:py-0.5 text-xs font-normal sm:font-semibold;
     }
 
     .custom-damage-main {
@@ -37,40 +42,40 @@ body::-webkit-scrollbar {
     }
 
     .more-btn {
-        @apply flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-16 py-2;
+        @apply flex items-center justify-center whitespace-nowrap rounded-md text-xs sm:text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-12 sm:w-16 py-1 sm:py-2;
     }
 
 
     .custom-role {
-        @apply bg-transparent shadow-sm flex items-center justify-center p-0.5 rounded-md border-2 border-background sm:p-3 text-xs font-semibold flex-1;
+        @apply bg-transparent shadow-sm flex items-center justify-center p-0.5 rounded-md border-2 border-background sm:p-3 text-xs font-normal sm:font-semibold flex-1;
     }
 
     .custom-role-flex {
-        @apply flex justify-between items-center sm:flex-row flex-col w-full
+        @apply flex justify-center items-center sm:flex-row flex-col w-full
     }
 
     .custom-role-assassin {
-        @apply text-pink-400 border-pink-700 m-2 w-full;
+        @apply text-pink-400 border-pink-700 sm:m-2 w-full;
     }
 
     .custom-role-mage {
-        @apply text-violet-400 border-violet-700 m-2 w-full;
+        @apply text-violet-400 border-violet-700 sm:m-2 w-full;
     }
 
     .custom-role-marksman {
-        @apply text-yellow-400 border-yellow-700 m-2 w-full;
+        @apply text-yellow-400 border-yellow-700 sm:m-2 w-full;
     }
 
     .custom-role-tank {
-        @apply text-indigo-400 border-indigo-700 m-2 w-full;
+        @apply text-indigo-400 border-indigo-700 sm:m-2 w-full;
     }
 
     .custom-role-fighter {
-        @apply text-green-400 border-green-700 m-2 w-full;
+        @apply text-green-400 border-green-700 sm:m-2 w-full;
     }
 
     .custom-role-support {
-        @apply text-slate-400 border-slate-700 m-2 w-full;
+        @apply text-slate-400 border-slate-700 sm:m-2 w-full;
     }
 
 

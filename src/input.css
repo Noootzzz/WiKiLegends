@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body,html {
+    scroll-behavior: smooth;
+}
+
 body::-webkit-scrollbar {
     display: none;
+
 }
 
 #filters label:has(> input[type="checkbox"]:checked),
@@ -18,18 +23,23 @@ body::-webkit-scrollbar {
     #filters label:has(> input[type="checkbox"]:checked):nth-child(1) {
         @apply outline-pink-700 text-pink-400
     }
+
     #filters label:has(> input[type="checkbox"]:checked):nth-child(2) {
         @apply outline-green-700 text-green-400
     }
+
     #filters label:has(> input[type="checkbox"]:checked):nth-child(3) {
         @apply outline-violet-700 text-violet-400
     }
+
     #filters label:has(> input[type="checkbox"]:checked):nth-child(4) {
         @apply outline-yellow-700 text-yellow-400
     }
+
     #filters label:has(> input[type="checkbox"]:checked):nth-child(5) {
         @apply outline-gray-700 text-gray-400
     }
+
     #filters label:has(> input[type="checkbox"]:checked):nth-child(6) {
         @apply outline-blue-700 text-blue-400
     }

@@ -108,8 +108,7 @@
             </fieldset>
 
             <button id="resetFilters"
-                class="border rounded-md cursor-pointer border-border p-4 text-white bg-transparent hover:bg-blue-500 hover:text-white transition duration-300">Reset
-                Filters</button>
+                class="border rounded-md cursor-pointer border-accent p-4 text-white hover:bg-hover-accent duration-tr">Reset</button>
         </div>
 
 
@@ -117,11 +116,16 @@
             <table id="champions-list" class="m-auto w-3/4">
                 <thead class="border-border text-xs sm:text-lg">
                     <tr class="border border-border">
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12">Avatar</th>
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-4/12">Name</th>
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12">Categorie</th>
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12">Damage</th>
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12">Links</th>
+                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12">Avatar
+                        </th>
+                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-4/12">Name
+                        </th>
+                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12">
+                            Categorie</th>
+                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12">Damage
+                        </th>
+                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12">Links
+                        </th>
                     </tr>
                 </thead>
                 <tbody id="champions-tbody" class="border border-border text-grey w-auto">
@@ -135,9 +139,11 @@
 
     </main>
 
-    <footer class="flex justify-center items-center p-8 text-grey w-full ">
+    <footer class="text-center p-8 text-grey w-full ">
         <h2></h2>
     </footer>
+
+    <a href="#" class="bg-primary p-2 rounded-md fixed bottom-3 right-2.5 sm:bottom-5 sm:right-5 md:bottom-7 md:right-7 text-white border-dark">UP</a>
 
     <script type="module" src="../js/displayAllChampions.js"></script>
     <script src="../js/searchChampion.js"></script>

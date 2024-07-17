@@ -1,4 +1,7 @@
-//Javascript to toggle the menu
-document.getElementById('nav-toggle').onclick = function(){
-    document.getElementById("nav-content").classList.toggle("hidden");
-}
+const menu = document.querySelector("#nav-toggle")
+const menuContent = document.querySelector("#nav-content")
+
+// toggle the menu on mobile
+menu.addEventListener("click", () => {
+    menuContent.classList.toggle("hidden")
+})

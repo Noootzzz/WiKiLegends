@@ -871,6 +871,10 @@ video {
   display: table-row;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -921,6 +925,22 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-\[\] {
+  grid-template-rows: ;
+}
+
+.grid-rows-\[auto_1fr_auto\] {
+  grid-template-rows: auto 1fr auto;
+}
+
+.grid-rows-\[1fr_auto\] {
+  grid-template-rows: 1fr auto;
 }
 
 .flex-col {

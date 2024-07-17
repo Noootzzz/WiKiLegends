@@ -16,6 +16,9 @@ module.exports = {
         'hover-primary': '#313160',
         'hover-accent': '#f2494c',
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       transitionDuration: {
         tr: '0.2s',
       },

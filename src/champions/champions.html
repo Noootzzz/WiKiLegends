@@ -37,64 +37,64 @@
         </div>
 
         <div id="filters"
-            class="text-grey flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10 w-3/4 p-10">
-            <fieldset class="flex justify-center items-center gap-2">
+            class="text-grey flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-10 w-full md:w-3/4 md:p-10 p-4">
+            <fieldset class="flex justify-center items-center gap-2 w-full">
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center flex-col gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center flex-col gap-2">
                     <input type="radio" name="sortOrder" id="sortAlphabetical" value="alphabetical" checked
                         class="hidden">
-                    <span class="radio-label">A-Z</span>
+                    <span class="radio-label whitespace-nowrap">A-Z</span>
                 </label>
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center flex-col gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center flex-col gap-2">
                     <input type="radio" name="sortOrder" id="sortReverseAlphabetical" value="reverseAlphabetical"
                         class="hidden">
-                    <span class="radio-label">Z-A</span>
+                    <span class="radio-label whitespace-nowrap">Z-A</span>
                 </label>
             </fieldset>
 
-            <fieldset class="flex justify-center items-center gap-2">
+            <fieldset class="flex justify-center items-center gap-4 flex-wrap sm:flex-wrap md:flex-nowrap w-full">
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
                     <input type="checkbox" id="roleAssassin" value="Assassin" class="hidden">
                     <img src="../img/controller_icon.webp" alt="assassin icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
                     <span class="checkbox-label">Assassin</span>
                 </label>
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
                     <input type="checkbox" id="roleFighter" value="Fighter" class="hidden">
                     <img src="../img/fighter_icon" alt="fighter icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
                     <span class="checkbox-label">Fighter</span>
                 </label>
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
                     <input type="checkbox" id="roleMage" value="Mage" class="hidden">
                     <img src="../img/mage_icon" alt="mage icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
                     <span class="checkbox-label">Mage</span>
                 </label>
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
                     <input type="checkbox" id="roleSupport" value="Support" class="hidden">
                     <img src="../img/controller_icon.webp" alt="support icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
                     <span class="checkbox-label">Support</span>
                 </label>
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
                     <input type="checkbox" id="roleTank" value="Tank" class="hidden">
                     <img src="../img/tank_icon.webp" alt="tank icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
                     <span class="checkbox-label">Tank</span>
                 </label>
             </fieldset>
 
-            <fieldset class="flex justify-center items-center gap-2">
+            <fieldset class="flex justify-center items-center gap-2 w-full">
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
                     <input type="radio" name="damageType" id="damageMagic" value="Magic" class="hidden">
                     <img src="../img/magic_icon.png" alt="magic icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
                     <span class="radio-label">Magic</span>
                 </label>
                 <label
-                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-4 flex justify-center items-center gap-2">
+                    class="hover:bg-grey/5 border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
                     <input type="radio" name="damageType" id="damagePhysic" value="Physic" class="hidden">
                     <img src="../img/armor_icon.png" alt="armor icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
                     <span class="radio-label">Physic</span>
@@ -119,7 +119,7 @@
                     </tr>
                 </thead>
                 <tbody id="champions-tbody" class="border border-border text-grey w-auto">
-                    <!-- Rows will be added here dynamically -->
+                    <!-- Rows added dynamically -->
                 </tbody>
             </table>
             <div id="error-message"

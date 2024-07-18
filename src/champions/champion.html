@@ -61,28 +61,33 @@
 
     <main class="flex flex-col justify-start items-center gap-20 w-full text-white min-h-screen">
         <!-- CHAMPION DESCRIPTION -->
-        <div id="champion-description" class="flex flex-col px-20 gap-2 sm:gap-10 min-w-10/12">
-            <div class="flex justify-center items-end gap-2 sm:gap-10">
-                <div
-                    class="flex-1 flex md:flex-row flex-col justify-start items-center gap-8 sm:gap-10 p-6 text-white border border-border rounded-md">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.14.1/img/champion/Aatrox.png" alt="avatar">
-                    <h3 class="text-4xl font-semibold leading-none tracking-tight">Aatrox</h3>
+        <div id="champion-description"
+            class="flex justify-center items-center flex-col px-10 sm:px-20 md:px-44 min-w-10/12 gap-4 sm:gap-10">
+
+            <div class="flex justify-center items-center w-full">
+                <div class="flex flex-col justify-center items-center gap-4 sm:gap-10 w-full">
+                    <img id="champion-avatar" src="" alt="avatar" class="">
+                    <h3 id="champion-name" class="text-4xl font-semibold leading-none tracking-tight w-full text-center">
+                    </h3>
                 </div>
-                <div class="flex-1 flex flex-col justify-center items-center">
-                    <h4 class="w-full text-center p-6 text-white border border-border rounded-md text-nowrap ">THE DARKIN BLADE</h4>
-                </div>
+
             </div>
-            <h4 class="flex-1 p-6 text-white text-justify border border-border rounded-md w-full">Once honored defenders of
-                Shurima against the
-                Void, Aatrox and his brethren would eventually become an even greater threat to Runeterra, and were
-                defeated only by cunning mortal sorcery. But after centuries of imprisonment, Aatrox was the first to
-                find freedom once more, corrupting and transforming those foolish enough to try and wield the magical
-                weapon that contained his essence. Now, with stolen flesh, he walks Runeterra in a brutal approximation
-                of his previous form, seeking an apocalyptic and long overdue vengeance.</h4>
+            <h4 id="champion-title" class=" text-center p-6 text-white border border-border rounded-md text-nowrap w-full text-xl"></h4>
+            <div class="flex justify-around items-center w-full">
+                <div class="flex justify-center items-center flex-col gap-5 h-full">
+                    <h4 class="sm:text-lg text-xs">Categorie(s):</h4>
+                    <div id="champion-tags" class="flex">
+                        <!-- <h4 class="custom-role custom-role-fighter p-1 sm:p-3 sm:text-sm text-xs">Fighter</h4>
+                        <h4 class="custom-role custom-role-marksman p-1 sm:p-3 sm:text-sm text-xs">Marksman</h4> -->
+                    </div>
+                </div>
+                <div class="flex justify-center items-center flex-col gap-5 h-full">
+                    <h4 class="sm:text-lg text-xs">Damage type:</h4>
+                        <h4 id="champion-damage" class="custom-role border-primary sm:m-2 p-1 sm:p-3 sm:text-sm text-xs"></h4>
+                </div>
             </div>
             
-        <div>
-
+            <h4 id="champion-lore" class=" p-6 text-white text-justify border border-border rounded-md text-sm sm:text-lg"></h4>
         </div>
     </main>
 

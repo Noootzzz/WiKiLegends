@@ -7,7 +7,7 @@ const API_SPELLS = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/im
 const API_PASSIVE = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/img/passive`
 
 // VARIABLE TO HOLD THE CHAMPION ID
-let championId = ""
+export let championId = ""
 
 // Cache to store fetched champion data to avoid redundant API calls
 let cachedChampionData = null

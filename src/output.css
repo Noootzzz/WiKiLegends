@@ -754,6 +754,90 @@ video {
   }
 }
 
+.custom-role-assassin {
+  width: 100%;
+  --tw-border-opacity: 1;
+  border-color: rgb(190 24 93 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(244 114 182 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .custom-role-assassin {
+    margin: 0.5rem;
+  }
+}
+
+.custom-role-mage {
+  width: 100%;
+  --tw-border-opacity: 1;
+  border-color: rgb(109 40 217 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .custom-role-mage {
+    margin: 0.5rem;
+  }
+}
+
+.custom-role-marksman {
+  width: 100%;
+  --tw-border-opacity: 1;
+  border-color: rgb(161 98 7 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .custom-role-marksman {
+    margin: 0.5rem;
+  }
+}
+
+.custom-role-tank {
+  width: 100%;
+  --tw-border-opacity: 1;
+  border-color: rgb(67 56 202 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(129 140 248 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .custom-role-tank {
+    margin: 0.5rem;
+  }
+}
+
+.custom-role-fighter {
+  width: 100%;
+  --tw-border-opacity: 1;
+  border-color: rgb(21 128 61 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .custom-role-fighter {
+    margin: 0.5rem;
+  }
+}
+
+.custom-role-support {
+  width: 100%;
+  --tw-border-opacity: 1;
+  border-color: rgb(51 65 85 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .custom-role-support {
+    margin: 0.5rem;
+  }
+}
+
 .fixed {
   position: fixed;
 }
@@ -793,10 +877,6 @@ video {
 
 .mt-10 {
   margin-top: 2.5rem;
-}
-
-.mt-auto {
-  margin-top: auto;
 }
 
 .block {
@@ -847,16 +927,8 @@ video {
   height: auto;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .w-2\/4 {
@@ -881,10 +953,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
 }
 
 .flex-1 {
@@ -929,10 +997,6 @@ video {
 
 .items-center {
   align-items: center;
-}
-
-.items-stretch {
-  align-items: stretch;
 }
 
 .justify-start {
@@ -1104,13 +1168,14 @@ video {
   padding: 2rem;
 }
 
-.p-20 {
-  padding: 5rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .px-3 {
@@ -1133,11 +1198,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
-
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1152,10 +1212,6 @@ video {
 
 .text-justify {
   text-align: justify;
-}
-
-.text-end {
-  text-align: end;
 }
 
 .align-middle {
@@ -1184,11 +1240,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -1496,11 +1547,6 @@ body::-webkit-scrollbar {
   .md\:p-10 {
     padding: 2.5rem;
   }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1544,21 +1590,6 @@ body::-webkit-scrollbar {
     padding-bottom: 0.5rem;
   }
 
-  .lg\:px-40 {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  .lg\:px-5 {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  .lg\:px-56 {
-    padding-left: 14rem;
-    padding-right: 14rem;
-  }
-
   .lg\:pt-0 {
     padding-top: 0px;
   }
@@ -1571,10 +1602,5 @@ body::-webkit-scrollbar {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 }

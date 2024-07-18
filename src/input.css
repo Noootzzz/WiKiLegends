@@ -61,7 +61,7 @@ body::-webkit-scrollbar {
     }
 
     .custom-damage {
-        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md p-0.5 sm:px-2.5 sm:py-0.5 text-xs font-normal sm:font-semibold;
+        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md p-0.5 sm:px-2.5 sm:py-0.5 text-xs font-light sm:font-semibold;
     }
 
     .custom-damage-main {
@@ -78,7 +78,7 @@ body::-webkit-scrollbar {
 
 
     .custom-role {
-        @apply bg-transparent shadow-sm flex items-center justify-center p-0.5 rounded-md border-2 border-background sm:p-3 text-xs font-normal sm:font-semibold flex-1;
+        @apply bg-transparent shadow-sm flex items-center justify-center p-0.5 rounded-md border-2 border-background sm:p-3 text-xs sm:font-semibold font-light flex-1;
     }
 
     .custom-role-flex {

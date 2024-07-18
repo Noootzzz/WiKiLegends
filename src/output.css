@@ -668,7 +668,7 @@ video {
     padding-right: 0.625rem;
     padding-top: 0.125rem;
     padding-bottom: 0.125rem;
-    font-weight: 600;
+    font-weight: 300;
   }
 }
 
@@ -736,7 +736,7 @@ video {
 @media (min-width: 640px) {
   .custom-role {
     padding: 0.75rem;
-    font-weight: 600;
+    font-weight: 300;
   }
 }
 
@@ -931,6 +931,10 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1017,10 +1021,6 @@ video {
 
 .justify-around {
   justify-content: space-around;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
 }
 
 .gap-10 {
@@ -1130,6 +1130,11 @@ video {
   background-color: transparent;
 }
 
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 42 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1219,6 +1224,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1278,6 +1288,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .leading-none {
@@ -1516,12 +1530,12 @@ body::-webkit-scrollbar {
     padding: 5rem;
   }
 
-  .sm\:p-4 {
-    padding: 1rem;
-  }
-
   .sm\:p-3 {
     padding: 0.75rem;
+  }
+
+  .sm\:p-4 {
+    padding: 1rem;
   }
 
   .sm\:px-20 {

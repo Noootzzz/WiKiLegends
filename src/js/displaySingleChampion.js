@@ -10,12 +10,12 @@ import {
     GetChampionInfos,
     GetChampionStats,
     championId
-} from './fetchSingleChampion.js'
+} from "./fetchSingleChampion.js"
 
 import {
     GetSquareChampionImageURL,
     GetChampionDamageType
-} from './fetchAllChampions.js'
+} from "./fetchAllChampions.js"
 
 const htmlChampionName = document.querySelector("#champion-name")
 const htmlChampionTitle = document.querySelector("#champion-title")
@@ -37,13 +37,13 @@ async function DisplaySingleChampion() {
         const championEnemyTips = await GetChampionEnemyTips()
         const championInfo = await GetChampionInfos()
         const championStats = await GetChampionStats()
-        // Récupérer le type de damage et l'URL de l'avatar du champion
+        // Récupérer le type de damage et l"URL de l"avatar du champion
         const championDamage = await GetChampionDamageType(championId)
         const championAvatar = GetSquareChampionImageURL(championId)
 
         // Mettre à jour les éléments HTML avec les données récupérées
         htmlChampionName.textContent = championName
-        
+
         htmlChampionTitle.textContent = championTitle
 
         htmlChampionAvatar.src = championAvatar
@@ -52,7 +52,7 @@ async function DisplaySingleChampion() {
         // Vider le contenu actuel de htmlChampionTags
         htmlChampionTags.textContent = ""
         
-        // Créer un élément <h4> pour chaque tag et l'ajouter au conteneur
+        // Créer un élément <h4> pour chaque tag et l"ajouter au conteneur
         championTags.forEach(tag => {
             const tagElement = document.createElement("h4")
             tagElement.textContent = tag
@@ -62,7 +62,7 @@ async function DisplaySingleChampion() {
 
         championDamage == "AP" ? htmlChampionDamage.textContent = "Magical" : championDamage == "AD" ? htmlChampionDamage.textContent = "Physical" : null  // Affichage des dégâts du champion
 
-        // console.log('Fetched Champion Data:', {
+        // console.log("Fetched Champion Data:", {
         //     championName,
         //     championTitle,
         //     championTags,
@@ -76,9 +76,9 @@ async function DisplaySingleChampion() {
         //     championAvatar
         // })
     } catch (error) {
-        console.error('Error fetching champion data:', error)
+        console.error(`ERROR DISPLAY SINGLE CHAMPION: ${error}`)
     }
 }
 
-// Appel de la fonction pour récupérer et afficher les données du champion
+// Afficher les données du champion
 DisplaySingleChampion()

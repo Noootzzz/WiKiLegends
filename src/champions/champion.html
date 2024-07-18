@@ -11,7 +11,7 @@
 </head>
 
 <body
-    class="font-poppins bg-background overflow-x-hidden min-h-screen relative flex justify-start items-center flex-col gap-20">
+    class="font-poppins bg-dark overflow-x-hidden min-h-screen relative flex justify-start items-center flex-col gap-20">
     <header class="flex justify-between items-center text-white text-lg font-semibold bg-transparent w-full">
         <nav class="flex items-center justify-between flex-wrap border-b border-border p-6 w-full z-10">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -71,23 +71,20 @@
                     </h3>
                 </div>
 
-            </div>
-            <h4 id="champion-title" class=" text-center p-6 text-white border border-border rounded-md text-nowrap w-full text-xl"></h4>
-            <div class="flex justify-around items-center w-full">
-                <div class="flex justify-center items-center flex-col gap-5 h-full">
-                    <h4 class="sm:text-lg text-xs">Categorie(s):</h4>
-                    <div id="champion-tags" class="flex">
-                        <!-- <h4 class="custom-role custom-role-fighter p-1 sm:p-3 sm:text-sm text-xs">Fighter</h4>
-                        <h4 class="custom-role custom-role-marksman p-1 sm:p-3 sm:text-sm text-xs">Marksman</h4> -->
-                    </div>
+            </div> 
+            <div class="flex justify-between items-start w-full sm:flex-row gap-4 text-nowrap flex-col">
+                <div class="flex justify-center items-center flex-col gap-5 h-full border border-border rounded-md p-4 bg-dark flex-1 w-full">
+                    <h4 class="sm:text-lg text-xs text-nowrap">Categorie(s):</h4>
+                    <div id="champion-tags" class="flex"></div>
                 </div>
-                <div class="flex justify-center items-center flex-col gap-5 h-full">
-                    <h4 class="sm:text-lg text-xs">Damage type:</h4>
+                <h4 id="champion-title" class="bg-dark capitalize text-center p-6 text-white border border-border rounded-md text-nowrap w-full text-xl flex-1"></h4>
+                <div class="flex justify-center items-center flex-col gap-5 h-full border border-border rounded-md p-4 bg-dark flex-1 w-full">
+                    <h4 class="sm:text-lg text-xs text-nowrap">Damage type:</h4>
                         <h4 id="champion-damage" class="custom-role border-primary sm:m-2 p-1 sm:p-3 sm:text-sm text-xs"></h4>
                 </div>
             </div>
             
-            <h4 id="champion-lore" class=" p-6 text-white text-justify border border-border rounded-md text-sm sm:text-lg"></h4>
+            <h4 id="champion-lore" class="bg-dark p-6 text-white text-justify border border-border rounded-md text-sm sm:text-lg"></h4>
         </div>
     </main>
 

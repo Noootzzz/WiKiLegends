@@ -66,7 +66,7 @@ export async function GetChampionTitle() {
     try {
         const championData = await FetchChampion()
         if (championData) {
-            const championTitle = championData.data[championId].title.toUpperCase()
+            const championTitle = championData.data[championId].title
             // console.log(`Champion Title: ${championTitle}`)
             return championTitle
         }

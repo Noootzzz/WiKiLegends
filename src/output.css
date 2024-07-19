@@ -1223,6 +1223,10 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
 .from-background {
   --tw-gradient-from: #020817 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(2 8 23 / 0) var(--tw-gradient-to-position);

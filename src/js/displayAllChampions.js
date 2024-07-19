@@ -89,7 +89,7 @@ async function CreateTableRow(championId, championIndex) {
     divMagic.classList.add("custom-damage")
     divPhysic.classList.add("custom-damage")
 
-    tdDamage.classList.add("custom-td")
+    tdDamage.classList.add("custom-td", "sm:table-cell", "hidden")
     tdDamage.appendChild(divMagic)
     tdDamage.appendChild(divPhysic)
     tr.appendChild(tdDamage)

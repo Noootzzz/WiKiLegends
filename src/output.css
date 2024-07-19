@@ -891,6 +891,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
 .block {
   display: block;
 }
@@ -1506,6 +1510,10 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 640px) {
+  .sm\:visible {
+    visibility: visible;
+  }
+
   .sm\:bottom-5 {
     bottom: 1.25rem;
   }
@@ -1524,6 +1532,22 @@ body::-webkit-scrollbar {
 
   .sm\:m-2 {
     margin: 0.5rem;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:table-cell {
+    display: table-cell;
+  }
+
+  .sm\:table-row {
+    display: table-row;
   }
 
   .sm\:h-3\/4 {

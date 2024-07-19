@@ -97,7 +97,7 @@ async function DisplaySingleChampion() {
             spellElement.classList.add("flex", "flex-col", "bg-background", "border", "border-border", "rounded-md", "p-4", "gap-4", "text-white")
 
             const small = document.createElement("small")
-            small.textContent = `${spellListNames[spellIndex]}`
+            small.textContent = `${spellListNames[spellIndex]} Spell`
             small.classList.add("text-white", "bg-primary", "w-fit", "px-2", "py-1", "rounded-md")
 
             const spellContainer = document.createElement("div")
@@ -125,7 +125,7 @@ async function DisplaySingleChampion() {
             const spellCost = document.createElement("div")
             const spellRange = document.createElement("div")
 
-            spellStats.classList.add("sm:ml-auto", "flex", "justify-center" , "sm:justify-start", "items-center", "flex-col", "sm:flex-row", "gap-4", "text-sm", "border", "border-border", "rounded-md", "text-primary", "sm:w-fit", "p-2")
+            spellStats.classList.add("ml-auto", "flex", "justify-center", "items-start", "flex-col", "sm:flex-row", "gap-4", "text-sm", "bg-primary", "rounded-md", "text-white", "w-fit", "p-2")
 
             spellCooldown.textContent = `Cooldown(s): ${spell.cooldown}`
             spellCost.textContent = `Cost(s): ${spell.cost}`

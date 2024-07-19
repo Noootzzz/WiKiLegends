@@ -100,6 +100,7 @@ async function DisplaySingleChampion() {
             spellIcon.classList.add("w-16", "h-16")
 
             const spellDetails = document.createElement("div")
+            spellDetails.classList.add("space-y-8", "sm:space-y-0")
 
             const spellName = document.createElement("h5")
             spellName.textContent = spell.name

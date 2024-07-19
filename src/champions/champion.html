@@ -59,10 +59,10 @@
         </h1>
     </a>
 
-    <main class="flex flex-col justify-start items-center gap-20 w-full text-white min-h-screen">
+    <main class="flex flex-col justify-start items-center gap-10 w-full text-white min-h-screen">
         <!-- CHAMPION DESCRIPTION -->
         <div id="champion-description"
-            class="flex justify-center items-center flex-col px-2 sm:px-14 md:px-44 min-w-10/12 gap-4 sm:gap-10 py-4">
+            class="flex justify-center items-center flex-col px-2 sm:px-14 md:px-44 min-w-10/12 gap-4 sm:gap-10">
 
             <div class="flex justify-center items-center w-full">
                 <div class="flex flex-col justify-center items-center gap-4 sm:gap-10 w-full">
@@ -92,20 +92,23 @@
                         class="custom-role border-primary sm:m-2 p-1 m:p-3 sm:text-sm text-xs w-full "></h4>
                 </div>
             </div>
-            <h4 id="champion-lore"
-                class="bg-background p-6 text-white text-justify border border-border rounded-md text-sm sm:text-lg leading-5">
-            </h4>
+            <div class="grid gap-10">
+                <h3 class="text-3xl font-semibold leading-none tracking-tight w-full text-center">Lore</h3>
+                <h4 id="champion-lore"
+                    class="bg-background p-6 text-white text-justify border border-border rounded-md text-sm sm:text-lg leading-5">
+                </h4>
+            </div>
         </div>
 
         <!-- CHAMPION SPELLS -->
         <div id="champion-spells" class="flex flex-col gap-10 w-full px-2 sm:px-14 md:px-44">
             <h3 class="text-3xl font-semibold leading-none tracking-tight w-full text-center">Spells</h3>
             <div id="champion-passive" class="flex flex-col bg-background border border-border rounded-md p-4 gap-4">
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 flex-col sm:flex-row">
                     <img id="champion-passive-icon" src="" alt="passive-icon" class="w-16 h-16">
-                    <div>
-                        <h5 id="champion-passive-name" class="text-lg font-semibold"></h5>
-                        <p id="champion-passive-description" class="text-sm"></p>
+                    <div class="space-y-8 sm:space-y-0">
+                        <h5 id="champion-passive-name" class="text-lg font-semibold text-center sm:text-start"></h5>
+                        <p id="champion-passive-description" class="text-sm text-justify"></p>
                     </div>
                 </div>
             </div>

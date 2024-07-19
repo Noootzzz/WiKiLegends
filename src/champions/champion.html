@@ -11,7 +11,7 @@
 </head>
 
 <body
-    class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen relative flex justify-start items-center flex-col gap-20">
+    class="font-poppins bg-gradient-to-br from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen relative flex justify-start items-center flex-col gap-20">
     <header class="flex justify-between items-center text-white text-lg font-semibold bg-transparent w-full">
         <nav class="flex items-center justify-between flex-wrap border-b border-border p-6 w-full z-10">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -116,135 +116,124 @@
             <div id="champion-spells-list" class="flex flex-col gap-4"></div>
         </div>
 
+        <!-- CHAMPIONS INFOS -->
         <div class=" w-full px-2 sm:px-14 md:px-44 grid gap-10">
             <h3 class="text-3xl font-semibold leading-none tracking-tight w-full text-center">Infos</h3>
-            <div class="grid grid-cols-2 gap-4 w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
 
                 <div class="grid bg-background border border-border p-4 rounded-md gap-8">
-                    <!-- Step Progress -->
-                    <h3 class="bg-primary rounded-md w-fit px-2 py-1">Attack</h3>
-                    <div class="flex items-center gap-x-1 w-full">
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div>
-                            <div class="w-10 text-end">
-                                <span class="text-sm bg-border rounded-md py-1 px-2">2/10</span>
-                            </div>
+                    <div id="attack-section" class="grid place-items-start gap-4 w-full">
+                        <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">Attack</h3>
+                        <div class="flex items-center gap-x-1 w-full" id="attack-bars">
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <span id="attack-score" class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"></span>
                         </div>
                     </div>
-                    <!-- End Step Progress -->
-                    <!-- Step Progress -->
-                    <h3 class="bg-primary rounded-md w-fit px-2 py-1">Defense</h3>
-                    <div class="flex items-center gap-x-1 w-full">
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div>
-                            <div class="w-10 text-end">
-                                <span class="text-sm bg-border rounded-md py-1 px-2">2/10</span>
-                            </div>
+                    <div id="defense-section" class="grid place-items-start gap-4 w-full">
+                        <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">Defense</h3>
+                        <div class="flex items-center gap-x-1 w-full" id="defense-bars">
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <span id="defense-score" class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"></span>
                         </div>
                     </div>
-                    <!-- End Step Progress -->
-                    <h3 class="bg-primary rounded-md w-fit px-2 py-1">Magic</h3>
-                    <!-- Step Progress -->
-                    <div class="flex items-center gap-x-1 w-full">
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div>
-                            <div class="w-10 text-end">
-                                <span class="text-sm bg-border rounded-md py-1 px-2">2/10</span>
-                            </div>
+
+                    <div id="magic-section" class="grid place-items-start gap-4 w-full">
+                        <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">Magic</h3>
+                        <div class="flex items-center gap-x-1 w-full" id="magic-bars">
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <span id="magic-score" class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"></span>
                         </div>
                     </div>
-                    <!-- End Step Progress -->
                 </div>
 
-                <div class="w-full bg-background border border-border rounded-md p-4 flex flex-col justify-evenly items-center">
-
-                    <h3 class="bg-primary rounded-md w-fit px-2 py-1 text-2xl">Difficulty</h3>
-                    <!-- Step Progress -->
-                    <div class="flex items-center gap-x-1 w-full">
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-white text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden bg-border text-xs text-white text-center whitespace-nowrap"
-                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div>
-                            <div class="w-10 text-end">
-                                <span class="text-sm bg-border rounded-md py-1 px-2">2/10</span>
-                            </div>
+                <div
+                    class="w-full bg-background border border-border rounded-md p-4 flex flex-col justify-evenly items-center">
+                    <div id="difficulty-section" class="grid place-items-center gap-4 w-full text-sm">
+                        <h3 class="bg-primary rounded-md w-fit px-2 py-1">Difficulty</h3>
+                        <div class="flex items-center gap-x-1 w-full" id="difficulty-bars">
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
+                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                                role="progressbar"></div>
                         </div>
+                        <span id="difficulty-score" class="ml-2 text-white bg-border rounded-md px-2 py-1 text-nowrap text-sm"></span>
                     </div>
-                    <!-- End Step Progress -->
+
+
+
                 </div>
 
             </div>

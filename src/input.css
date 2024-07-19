@@ -73,7 +73,7 @@ body::-webkit-scrollbar {
     }
 
     .more-btn {
-        @apply flex items-center justify-center whitespace-nowrap rounded-md text-xs sm:text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-12 sm:w-16 py-1 sm:py-2;
+        @apply flex items-center justify-center whitespace-nowrap rounded-md text-xs sm:text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-12 sm:w-16 py-1 m-2 sm:py-2;
     }
 
 

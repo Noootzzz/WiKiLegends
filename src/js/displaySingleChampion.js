@@ -85,11 +85,20 @@ async function DisplaySingleChampion() {
         htmlChampionPassiveName.textContent = championPassive[0].name
         htmlChampionPassiveDescription.textContent = championPassive[0].description
 
+        console.log(championPassive)
+        console.log(championSpells)
         // Afficher les informations des sorts
+        let spellIndex = 0
         htmlChampionSpellsList.textContent = ""
         championSpells.forEach(spell => {
+            const spellListNames = ["Q", "W", "E", "R"]
+
             const spellElement = document.createElement("div")
-            spellElement.classList.add("flex", "flex-col", "bg-background", "border", "border-border", "rounded-md", "p-4", "gap-4")
+            spellElement.classList.add("flex", "flex-col", "bg-background", "border", "border-border", "rounded-md", "p-4", "gap-4", "text-white")
+
+            const small = document.createElement("small")
+            small.textContent = `${spellListNames[spellIndex]}`
+            small.classList.add("text-white", "bg-primary", "w-fit", "px-2", "py-1", "rounded-md")
 
             const spellContainer = document.createElement("div")
             spellContainer.classList.add("flex", "items-center", "gap-4", "flex-col", "sm:flex-row")
@@ -111,13 +120,31 @@ async function DisplaySingleChampion() {
             spellDescription.textContent = spell.description.replace(/<br\s*\/?>/gi, ' ')
             spellDescription.classList.add("text-sm", "text-justify")
 
+            const spellStats = document.createElement("div")
+            const spellCooldown = document.createElement("div")
+            const spellCost = document.createElement("div")
+            const spellRange = document.createElement("div")
+
+            spellStats.classList.add("sm:ml-auto", "flex", "justify-center" , "sm:justify-start", "items-center", "flex-col", "sm:flex-row", "gap-4", "text-sm", "border", "border-border", "rounded-md", "text-primary", "sm:w-fit", "p-2")
+
+            spellCooldown.textContent = `Cooldown(s): ${spell.cooldown}`
+            spellCost.textContent = `Cost(s): ${spell.cost}`
+            spellRange.textContent = `Range(s): ${spell.range}`
+
+            spellStats.appendChild(spellCooldown)
+            spellStats.appendChild(spellCost)
+            spellStats.appendChild(spellRange)
             spellDetails.appendChild(spellName)
             spellDetails.appendChild(spellDescription)
             spellContainer.appendChild(spellIcon)
             spellContainer.appendChild(spellDetails)
+            spellElement.appendChild(small)
             spellElement.appendChild(spellContainer)
+            spellElement.appendChild(spellStats)
 
             htmlChampionSpellsList.appendChild(spellElement)
+
+            spellIndex++
         })
 
 

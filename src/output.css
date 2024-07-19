@@ -931,10 +931,6 @@ video {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -979,8 +975,16 @@ video {
   cursor: pointer;
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .grid-rows-\[1fr_auto\] {
   grid-template-rows: 1fr auto;
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -1017,10 +1021,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
 }
 
 .gap-10 {
@@ -1121,6 +1121,11 @@ video {
   background-color: rgb(2 8 23 / var(--tw-bg-opacity));
 }
 
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 42 / var(--tw-bg-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(53 118 223 / var(--tw-bg-opacity));
@@ -1128,11 +1133,6 @@ video {
 
 .bg-transparent {
   background-color: transparent;
-}
-
-.bg-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 17 42 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -1224,9 +1224,9 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .pt-6 {
@@ -1548,6 +1548,16 @@ body::-webkit-scrollbar {
     padding-right: 1rem;
   }
 
+  .sm\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .sm\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1561,6 +1571,11 @@ body::-webkit-scrollbar {
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

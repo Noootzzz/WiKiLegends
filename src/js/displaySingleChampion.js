@@ -29,6 +29,7 @@ const htmlChampionPassiveDescription = document.querySelector("#champion-passive
 const htmlChampionSpellsList = document.querySelector("#champion-spells-list")
 
 
+
 async function DisplaySingleChampion() {
     try {
         // Récupérer les données du champion
@@ -45,6 +46,8 @@ async function DisplaySingleChampion() {
         // Récupérer le type de damage et l"URL de l"avatar du champion
         const championDamage = await GetChampionDamageType(championId)
         const championAvatar = GetSquareChampionImageURL(championId)
+
+        document.title = championName
 
         // Mettre à jour les éléments HTML avec les données récupérées
         htmlChampionName.textContent = championName
@@ -63,7 +66,7 @@ async function DisplaySingleChampion() {
         })
 
         championDamage == "AP" ? htmlChampionDamage.textContent = "Magical" : championDamage == "AD" ? htmlChampionDamage.textContent = "Physical" : null  // Affichage des dégâts du champion
-
+        
         // console.log("Fetched Champion Data:", {
         //     championName,
         //     championTitle,
@@ -85,8 +88,6 @@ async function DisplaySingleChampion() {
         htmlChampionPassiveName.textContent = championPassive[0].name
         htmlChampionPassiveDescription.textContent = championPassive[0].description
 
-        console.log(championPassive)
-        console.log(championSpells)
         // Afficher les informations des sorts
         let spellIndex = 0
         htmlChampionSpellsList.textContent = ""
@@ -125,15 +126,15 @@ async function DisplaySingleChampion() {
             const spellCost = document.createElement("div")
             const spellRange = document.createElement("div")
 
-            spellStats.classList.add("ml-auto", "flex", "justify-center", "items-start", "flex-col", "sm:flex-row", "gap-4", "text-sm", "bg-primary", "rounded-md", "text-white", "w-fit", "p-2")
+            spellStats.classList.add("ml-auto", "flex", "justify-center", "items-center", "flex-col", "sm:flex-row", "gap-4", "text-xs", "sm:text-sm", "bg-border", "rounded-md", "text-white", "w-full", "sm:w-fit", "p-2")
 
             spellCooldown.textContent = `Cooldown(s): ${spell.cooldown}`
             spellCost.textContent = `Cost(s): ${spell.cost}`
             spellRange.textContent = `Range(s): ${spell.range}`
 
-            spellStats.appendChild(spellCooldown)
-            spellStats.appendChild(spellCost)
             spellStats.appendChild(spellRange)
+            spellStats.appendChild(spellCost)
+            spellStats.appendChild(spellCooldown)
             spellDetails.appendChild(spellName)
             spellDetails.appendChild(spellDescription)
             spellContainer.appendChild(spellIcon)
@@ -147,8 +148,9 @@ async function DisplaySingleChampion() {
             spellIndex++
         })
 
+        console.log(championInfo)
 
-
+        console.log(championStats)
 
     } catch (error) {
         console.error(`ERROR DISPLAY SINGLE CHAMPION: ${error}`)

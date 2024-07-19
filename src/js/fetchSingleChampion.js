@@ -109,7 +109,7 @@ export async function GetChampionPassive() {
             let passiveImageLink = `${API_PASSIVE}/${championPassive.image.full}`
             // console.log(`Champion Passive: ${championPassive.name} - ${championPassive.description}`)
             // console.log(`Passive Image: ${championPassive.image.full} ${passiveImageLink}`)
-            return championPassive
+            return [championPassive,passiveImageLink]
         }
     } catch (error) {
         console.error(`GET CHAMPION PASSIVE ERROR: ${error}`)

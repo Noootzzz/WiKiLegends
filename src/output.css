@@ -1103,6 +1103,10 @@ video {
   gap: 1.25rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .gap-8 {
   gap: 2rem;
 }
@@ -1136,6 +1140,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .overflow-x-hidden {
@@ -1217,10 +1225,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(247 249 251 / var(--tw-bg-opacity));
-}
-
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-r {
@@ -1438,7 +1442,8 @@ video {
   transition-duration: 0.2s;
 }
 
-body,html {
+body,
+html {
   scroll-behavior: smooth;
 }
 

@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body,html {
+body,
+html {
     scroll-behavior: smooth;
 }
 
@@ -108,9 +109,5 @@ body::-webkit-scrollbar {
     .custom-role-support {
         @apply text-slate-400 border-slate-700 sm:m-2 w-full;
     }
-
-
-
-
 
 }

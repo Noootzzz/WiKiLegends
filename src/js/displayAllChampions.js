@@ -43,7 +43,25 @@ async function CreateTableRow(championId, championIndex, championName) {
     championTags.forEach(tag => {
         const divTag = document.createElement("div")
         divTag.textContent = tag
-        divTag.classList.add("custom-role", `custom-role-${tag.toLowerCase()}`)
+        divTag.classList.add("custom-role", "custom-role-flex", `custom-role-${tag.toLowerCase()}`)
+        if(tag.toLowerCase() === "assassin") {
+            divTag.classList.add("custom-role-assassin")
+        }
+        if(tag.toLowerCase() === "fighter") {
+            divTag.classList.add("custom-role-fighter")
+        }
+        if(tag.toLowerCase() === "mage") {
+            divTag.classList.add("custom-role-mage")
+        }
+        if(tag.toLowerCase() === "marksman") {
+            divTag.classList.add("custom-role-marksman")
+        }
+        if(tag.toLowerCase() === "support") {
+            divTag.classList.add("custom-role-support")
+        }
+        if(tag.toLowerCase() === "tank") {
+            divTag.classList.add("custom-role-tank")
+        }
         divTags.appendChild(divTag)
     })
 

@@ -54,7 +54,6 @@ export async function GetChampionName() {
         const championData = await FetchChampion()
         if (championData) {
             const championName = championData.data[championId].name
-            // console.log(`Champion Name: ${championName}`)
             return championName
         }
     } catch (error) {
@@ -67,7 +66,6 @@ export async function GetChampionTitle() {
         const championData = await FetchChampion()
         if (championData) {
             const championTitle = championData.data[championId].title
-            // console.log(`Champion Title: ${championTitle}`)
             return championTitle
         }
     } catch (error) {
@@ -80,7 +78,6 @@ export async function GetChampionTag() {
         const championData = await FetchChampion()
         if (championData) {
             const championTags = championData.data[championId].tags
-            // console.log(`Champion Tags: ${championTags.join(', ')}`)
             return championTags
         }
     } catch (error) {
@@ -93,7 +90,6 @@ export async function GetChampionLore() {
         const championData = await FetchChampion()
         if (championData) {
             const championLore = championData.data[championId].lore
-            // console.log(`Champion Lore: ${championLore}`)
             return championLore
         }
     } catch (error) {
@@ -107,8 +103,6 @@ export async function GetChampionPassive() {
         if (championData) {
             const championPassive = championData.data[championId].passive
             let passiveImageLink = `${API_PASSIVE}/${championPassive.image.full}`
-            // console.log(`Champion Passive: ${championPassive.name} - ${championPassive.description}`)
-            // console.log(`Passive Image: ${championPassive.image.full} ${passiveImageLink}`)
             return [championPassive,passiveImageLink]
         }
     } catch (error) {
@@ -131,13 +125,6 @@ export async function GetChampionSpells() {
                     range: spell.rangeBurn,
                     image: spellImageLink
                 }
-                // console.log(`Spell: ${spellDetails.name}`)
-                // console.log(`Description: ${spellDetails.description}`)
-                // console.log(`Cooldown: ${spellDetails.cooldown}`)
-                // console.log(`Cost: ${spellDetails.cost}`)
-                // console.log(`Range: ${spellDetails.range}`)
-                // console.log(spellDetails.image)
-                // console.log('---')
                 return spellDetails
             })
             return spellsDetails
@@ -152,10 +139,6 @@ export async function GetChampionAllyTips() {
         const championData = await FetchChampion()
         if (championData) {
             const championEnemyTips = championData.data[championId].allytips
-            // console.log(`Ally Tips:`)
-            // championEnemyTips.forEach(tip => {
-            //     console.log(`- ${tip}`)
-            // })
             return championEnemyTips
         }
     } catch (error) {
@@ -168,10 +151,6 @@ export async function GetChampionEnemyTips() {
         const championData = await FetchChampion()
         if (championData) {
             const championEnemyTips = championData.data[championId].enemytips
-            // console.log(`Enemy Tips:`)
-            // championEnemyTips.forEach(tip => {
-            //     console.log(`- ${tip}`)
-            // })
             return championEnemyTips
         }
     } catch (error) {
@@ -184,7 +163,6 @@ export async function GetChampionInfos() {
         const championData = await FetchChampion()
         if (championData) {
             const championInfo = championData.data[championId].info
-            // console.log(`Champion Info: Attack: ${championInfo.attack}, Defense: ${championInfo.defense}, Magic: ${championInfo.magic}, Difficulty: ${championInfo.difficulty}`)
             return championInfo
         }
     } catch (error) {
@@ -197,7 +175,6 @@ export async function GetChampionStats() {
         const championData = await FetchChampion()
         if (championData) {
             const championStats = championData.data[championId].stats
-            // console.log(`Champion Stats: HP: ${championStats.hp}, HP Per Level: ${championStats.hpperlevel}, MP: ${championStats.mp}, MP Per Level: ${championStats.mpperlevel}`)
             return championStats
         }
     } catch (error) {
@@ -205,3 +182,15 @@ export async function GetChampionStats() {
     }
 }
 
+
+export async function GetChampionSkinsList() {
+    const championData = await FetchChampion()
+    if (championData) {
+        let championSkinsList = []
+        const championSkins = championData.data[championId].skins
+        championSkins.forEach(skin => {
+            championSkinsList.push(skin.num)
+        })
+        return championSkinsList
+    }
+}

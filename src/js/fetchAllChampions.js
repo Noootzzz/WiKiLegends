@@ -77,8 +77,8 @@ export function GetChampionLink(championId) {
 }
 
 // Function to create the URL for the champion's rectangle image
-export function GetRectangleChampionImageURL(championId) {
-    return `${IMG_RECTANGLE_CHAMPION}/${championId}_0.jpg`
+export function GetRectangleChampionImageURL(championId, imgNumber) {
+    return `${IMG_RECTANGLE_CHAMPION}/${championId}_${imgNumber}.jpg`
 }
 
 // Function to create the URL for the champion's square image

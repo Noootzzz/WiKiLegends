@@ -9,11 +9,13 @@ import {
     GetChampionEnemyTips,
     GetChampionInfos,
     GetChampionStats,
-    championId
+    championId,
+    GetChampionSkinsList
 } from "./fetchSingleChampion.js"
 
 import {
     GetSquareChampionImageURL,
+    GetRectangleChampionImageURL,
     GetChampionDamageType
 } from "./fetchAllChampions.js"
 
@@ -28,6 +30,9 @@ const htmlChampionPassiveIcon = document.querySelector("#champion-passive-icon")
 const htmlChampionPassiveName = document.querySelector("#champion-passive-name")
 const htmlChampionPassiveDescription = document.querySelector("#champion-passive-description")
 const htmlChampionSpellsList = document.querySelector("#champion-spells-list")
+const htmlChampionAllyTips = document.querySelector("#champion-ally-tips")
+const htmlChampionEnemyTips = document.querySelector("#champion-enemy-tips")
+const htmlRectangleImages = document.querySelector("#rectangle-images")
 
 async function DisplaySingleChampion() {
     try {
@@ -41,7 +46,11 @@ async function DisplaySingleChampion() {
             championSpells,
             championInfo,
             championDamage,
-            championAvatar
+            championAvatar,
+            championStats,
+            championAllyTips,
+            championEnemyTips,
+            championSkinsList
         ] = await Promise.all([
             GetChampionName(),
             GetChampionTitle(),
@@ -51,7 +60,11 @@ async function DisplaySingleChampion() {
             GetChampionSpells(),
             GetChampionInfos(),
             GetChampionDamageType(championId),
-            GetSquareChampionImageURL(championId)
+            GetSquareChampionImageURL(championId),
+            GetChampionStats(),
+            GetChampionAllyTips(),
+            GetChampionEnemyTips(),
+            GetChampionSkinsList()
         ])
 
         document.title = championName
@@ -72,6 +85,7 @@ async function DisplaySingleChampion() {
         })
 
         htmlChampionDamage.textContent = championDamage === "AP" ? "Magical" : championDamage === "AD" ? "Physical" : ""
+        
 
         // Display passive info
         htmlChampionPassiveIcon.src = championPassive[1]
@@ -147,7 +161,23 @@ async function DisplaySingleChampion() {
         updateBars("magic-bars", "magic-score", championInfo.magic)
         updateBars("difficulty-bars", "difficulty-score", championInfo.difficulty)
 
-        console.log(championStats)
+        // Display ally and enemy tips with "No Data" if empty
+        htmlChampionAllyTips.innerHTML = championAllyTips.length > 0
+            ? championAllyTips.map(tip => `<p>${tip}</p>`).join("")
+            : "<p>No Tips</p>";
+
+        htmlChampionEnemyTips.innerHTML = championEnemyTips.length > 0
+            ? championEnemyTips.map(tip => `<p>${tip}</p>`).join("")
+            : "<p>No Tips</p>";
+
+        // Display rectangle images
+        htmlRectangleImages.textContent = ""
+        championSkinsList.forEach(skin => {
+            const image = document.createElement("img")
+            image.src = GetRectangleChampionImageURL(championId, skin)
+            image.alt = `${championId} Skin`
+            htmlRectangleImages.appendChild(image)
+        })
 
     } catch (error) {
         console.error(`ERROR DISPLAY SINGLE CHAMPION: ${error}`)
@@ -156,3 +186,4 @@ async function DisplaySingleChampion() {
 
 // Display the champion data
 DisplaySingleChampion()
+

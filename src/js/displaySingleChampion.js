@@ -8,9 +8,9 @@ import {
     GetChampionAllyTips,
     GetChampionEnemyTips,
     GetChampionInfos,
-    GetChampionStats,
     championId,
-    GetChampionSkinsList
+    GetChampionSkinsList,
+    GetChampionSpellsVideosLinksList
 } from "./fetchSingleChampion.js"
 
 import {
@@ -33,6 +33,7 @@ const htmlChampionSpellsList = document.querySelector("#champion-spells-list")
 const htmlChampionAllyTips = document.querySelector("#champion-ally-tips")
 const htmlChampionEnemyTips = document.querySelector("#champion-enemy-tips")
 const htmlRectangleImages = document.querySelector("#rectangle-images")
+const htmlChampionPassiveVideo = document.querySelector("#passive-video")
 
 async function DisplaySingleChampion() {
     try {
@@ -47,10 +48,10 @@ async function DisplaySingleChampion() {
             championInfo,
             championDamage,
             championAvatar,
-            championStats,
             championAllyTips,
             championEnemyTips,
-            championSkinsList
+            championSkinsList,
+            championSpellsVideosLinksList
         ] = await Promise.all([
             GetChampionName(),
             GetChampionTitle(),
@@ -61,10 +62,10 @@ async function DisplaySingleChampion() {
             GetChampionInfos(),
             GetChampionDamageType(championId),
             GetSquareChampionImageURL(championId),
-            GetChampionStats(),
             GetChampionAllyTips(),
             GetChampionEnemyTips(),
-            GetChampionSkinsList()
+            GetChampionSkinsList(),
+            GetChampionSpellsVideosLinksList()
         ])
 
         document.title = championName
@@ -85,12 +86,13 @@ async function DisplaySingleChampion() {
         })
 
         htmlChampionDamage.textContent = championDamage === "AP" ? "Magical" : championDamage === "AD" ? "Physical" : ""
-        
 
         // Display passive info
         htmlChampionPassiveIcon.src = championPassive[1]
         htmlChampionPassiveName.textContent = championPassive[0].name
         htmlChampionPassiveDescription.textContent = championPassive[0].description
+        htmlChampionPassiveVideo.src = championSpellsVideosLinksList[0]
+
 
         // Display spells info
         htmlChampionSpellsList.textContent = ""
@@ -123,7 +125,21 @@ async function DisplaySingleChampion() {
             spellDescription.classList.add("text-sm", "text-justify")
 
             const spellStats = document.createElement("div")
-            spellStats.classList.add("ml-auto", "flex", "justify-center", "items-center", "flex-col", "sm:flex-row", "gap-4", "text-xs", "sm:text-sm", "bg-border", "rounded-md", "text-white", "w-full", "sm:w-fit", "p-2")
+            spellStats.classList.add("ml-auto", "flex", "justify-center", "items-center", "flex-col", "sm:flex-row", "gap-4", "text-xs", "sm:text-sm", "bg-border", "rounded-md", "text-white", "w-full", "p-2")
+
+            if (championSpellsVideosLinksList[index + 1] !== "NA") {
+                const spellVideo = document.createElement("video")
+                spellVideo.src = championSpellsVideosLinksList[index + 1] // Associe la vidéo correcte pour chaque sort
+                spellVideo.controls = true // Ajoute les contrôles de lecture
+                spellVideo.classList.add("sm:w-1/3", "h-auto", "rounded-md", "sm:mr-auto") // Styles pour la vidéo
+                spellStats.appendChild(spellVideo)
+            } else {
+                const spellVideoPlaceholder = document.createElement("div")
+                spellVideoPlaceholder.classList.add("sm:mr-auto", "w-full") // Styles pour la placeholder
+                spellVideoPlaceholder.textContent = "No Video Available" // Placeholder si aucune vidéo disponible
+                spellStats.appendChild(spellVideoPlaceholder)
+            }
+
 
             const spellCooldown = document.createElement("div")
             spellCooldown.textContent = `Cooldown(s): ${spell.cooldown}`
@@ -131,6 +147,10 @@ async function DisplaySingleChampion() {
             spellCost.textContent = `Cost(s): ${spell.cost}`
             const spellRange = document.createElement("div")
             spellRange.textContent = `Range(s): ${spell.range}`
+
+            spellCooldown.classList.add("text-nowrap")
+            spellCost.classList.add("text-nowrap")
+            spellRange.classList.add("text-nowrap")
 
             spellStats.appendChild(spellRange)
             spellStats.appendChild(spellCost)

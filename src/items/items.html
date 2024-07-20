@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items</title>
     <link rel="stylesheet" href="../output.css">
+    <link rel="shortcut icon" href="../img/Logo_WikiLegends.png" type="image/png">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
-<body>
-    
+
+<body
+    class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen relative grid grid-rows-[auto_1fr_auto] gap-20">
+    <header class="flex justify-between items-center text-white text-lg font-semibold bg-transparent w-full">
+        <nav class="flex items-center justify-between flex-wrap border-b border-border p-6 w-full z-10">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <a class="text-white no-underline hover:text-white hover:no-underline" href="../index.html">
+                    <h1
+                        class="relative flex flex-wrap items-center justify-center gap-2 text-sm font-bold max-lg:text-center lg:text-lg text-white">
+                        <span class="rounded-md bg-primary px-2 py-1 lg:px-2 lg:py-1">Wiki</span>Legends
+                    </h1>
+                </a>
+            </div>
+
+            <div class="block lg:hidden">
+                <button id="nav-toggle"
+                    class="flex items-center px-3 py-2 border-2 rounded-md text-white border-white hover:text-primary hover:border-primary">
+                    <svg class="fill-current h-5 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="w-full flex-grow lg:items-center lg:w-auto hidden lg:flex pt-6 lg:pt-0" id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 items-center gap-10">
+                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
+                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="../items/items.html">Items</a>
+                    </li>
+                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
+                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="../champions/champions.html">Champions</a>
+                    </li>
+                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
+                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="../runes/runes.html">Runes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main></main>
+
+    <footer class="text-center p-8 text-grey w-full ">
+        <h2></h2>
+    </footer>
+
+
+    <script src="../js/toggleHeader.js"></script>
+    <script type="module" src="../js/dynamicDate.js"></script>
 </body>
+
 </html>

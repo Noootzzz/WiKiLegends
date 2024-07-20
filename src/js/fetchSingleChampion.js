@@ -103,7 +103,7 @@ export async function GetChampionPassive() {
         if (championData) {
             const championPassive = championData.data[championId].passive
             let passiveImageLink = `${API_PASSIVE}/${championPassive.image.full}`
-            return [championPassive,passiveImageLink]
+            return [championPassive, passiveImageLink]
         }
     } catch (error) {
         console.error(`GET CHAMPION PASSIVE ERROR: ${error}`)
@@ -194,3 +194,53 @@ export async function GetChampionSkinsList() {
         return championSkinsList
     }
 }
+
+export async function GetChampionSpellsVideosLinksList() {
+    try {
+        const championData = await FetchChampion()
+        if (championData) {
+            const championSpellsVideoLinksList = []
+            const championSpellsList = ["P1", "Q1", "W1", "E1", "R1"]
+            const championSpellsVideoKey = championData.data[championId].key
+
+            const formatKey = (key) => {
+                if (key.length === 1) {
+                    return `000${key}`
+                } else if (key.length === 2) {
+                    return `00${key}`
+                } else if (key.length === 3) {
+                    return `0${key}`
+                } else {
+                    return key
+                }
+            }
+
+            const formattedKey = formatKey(championSpellsVideoKey)
+
+            const checkVideoExists = (url) => {
+                return new Promise((resolve) => {
+                    const video = document.createElement('video')
+                    video.src = url
+                    video.onloadeddata = () => resolve(true)
+                    video.onerror = () => resolve(false)
+                })
+            }
+
+            for (const spell of championSpellsList) {
+                const videoUrl = `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${formattedKey}/ability_${formattedKey}_${spell}.mp4`
+                const exists = await checkVideoExists(videoUrl)
+                if (exists) {
+                    championSpellsVideoLinksList.push(videoUrl)
+                } else {
+                    championSpellsVideoLinksList.push("NA")
+                }
+            }
+
+            console.log(championSpellsVideoLinksList)
+            return championSpellsVideoLinksList
+        }
+    } catch (error) {
+        console.error(`GET CHAMPION SPELLS VIDEO ERROR: ${error}`)
+    }
+}
+

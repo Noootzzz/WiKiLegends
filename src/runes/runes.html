@@ -11,7 +11,7 @@
 </head>
 
 <body
-    class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen relative grid grid-rows-[auto_1fr_auto] gap-20">
+    class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden sm:overflow-hidden sm:h-screen relative grid grid-rows-[auto_1fr_auto] gap-20">
     <header class="flex justify-between items-center text-white text-lg font-semibold bg-transparent w-full">
         <nav class="flex items-center justify-between flex-wrap border-b border-border p-6 w-full z-10">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -52,42 +52,52 @@
         </nav>
     </header>
 
-    <main class="flex justify-center items-center gap-10 text-white ">
-        <div>
-            <a href="./rune.html">
-                <h2>Precision</h2>
-                <img src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8000/stripe.jpg"
-                    alt="Precision">
-            </a>
-        </div>
-        <div>
-            <a href="./rune.html">
-                <h2>Domination</h2>
-                <img src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8100/stripe.jpg"
-                    alt="Domination">
-            </a>
-        </div>
-        <div>
-            <a href="./rune.html">
-                <h2>Sorcellerie</h2>
-                <img src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8200/stripe.jpg"
-                    alt="Sorcellerie">
-            </a>
-        </div>
-        <div>
-            <a href="./rune.html">
-                <h2>Volonté</h2>
-                <img src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8300/stripe.jpg"
-                    alt="Volonté">
-            </a>
-        </div>
-        <div>
-            <a href="./rune.html">
-                <h2>Inspiration</h2>
-                <img src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8400/stripe.jpg"
-                    alt="Inspiration">
-            </a>
-        </div>
+    <main class="flex flex-wrap justify-center items-center gap-10 text-white px-10 h-full">
+
+        <a class="hover:bg-dark duration-tr flex flex-1 justify-center items-center flex-col bg-background gap-10 sm:gap-4 rounded-md p-10 sm:p-4"
+            href="./rune.html?id=p">
+            <h2 class="text-center sm:text-4xl text-5xl">Precision</h2>
+            <img class=" sm:mb-4 shadow-sm sm:w-10/12 rounded-md"
+                src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8000/stripe.jpg"
+                alt="Precision">
+        </a>
+
+
+        <a class="hover:bg-dark duration-tr flex flex-1 justify-center items-center flex-col bg-background gap-10 sm:gap-4 rounded-md p-10 sm:p-4"
+            href="./rune.html?id=d">
+            <h2 class="text-center sm:text-4xl text-5xl">Domination</h2>
+            <img class=" sm:mb-4 shadow-sm sm:w-10/12 rounded-md"
+                src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8100/stripe.jpg"
+                alt="Domination">
+        </a>
+
+
+        <a class="hover:bg-dark duration-tr flex flex-1 justify-center items-center flex-col bg-background gap-10 sm:gap-4 rounded-md p-10 sm:p-4"
+            href="./rune.html?id=s">
+            <h2 class="text-center sm:text-4xl text-5xl">Sorcellerie</h2>
+            <img class=" sm:mb-4 shadow-sm sm:w-10/12 rounded-md"
+                src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8200/stripe.jpg"
+                alt="Sorcellerie">
+        </a>
+
+
+        <a class="hover:bg-dark duration-tr flex flex-1 justify-center items-center flex-col bg-background gap-10 sm:gap-4 rounded-md p-10 sm:p-4"
+            href="./rune.html?id=v">
+            <h2 class="text-center sm:text-4xl text-5xl">Volonté</h2>
+            <img class=" sm:mb-4 shadow-sm sm:w-10/12 rounded-md"
+                src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8300/stripe.jpg"
+                alt="Volonté">
+        </a>
+
+
+        <a class="hover:bg-dark duration-tr flex flex-1 justify-center items-center flex-col bg-background gap-10 sm:gap-4 rounded-md p-10 sm:p-4"
+            href="./rune.html?id=i">
+            <h2 class="text-center sm:text-4xl text-5xl">Inspiration</h2>
+            <img class=" sm:mb-4 shadow-sm sm:w-10/12 rounded-md"
+                src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/preseason-2018/fr_FR/a6708b7ae3dbc0b25463f9c8e259a513d2c4c7e6/assets/img/customizer/8400/stripe.jpg"
+                alt="Inspiration">
+        </a>
+
     </main>
 
     <footer class="text-center p-8 text-grey w-full ">

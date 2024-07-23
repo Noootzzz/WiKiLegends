@@ -33,7 +33,7 @@ const htmlChampionSpellsList = document.querySelector("#champion-spells-list")
 const htmlChampionAllyTips = document.querySelector("#champion-ally-tips")
 const htmlChampionEnemyTips = document.querySelector("#champion-enemy-tips")
 const htmlRectangleImages = document.querySelector("#rectangle-images")
-const htmlChampionPassiveVideo = document.querySelector("#passive-video")
+const htmlChampionPassiveVideo = document.querySelector("#champion-passive-video")
 
 async function DisplaySingleChampion() {
     try {
@@ -87,12 +87,28 @@ async function DisplaySingleChampion() {
 
         htmlChampionDamage.textContent = championDamage === "AP" ? "Magical" : championDamage === "AD" ? "Physical" : ""
 
+
         // Display passive info
         htmlChampionPassiveIcon.src = championPassive[1]
         htmlChampionPassiveName.textContent = championPassive[0].name
         htmlChampionPassiveDescription.textContent = championPassive[0].description
-        htmlChampionPassiveVideo.src = championSpellsVideosLinksList[0]
 
+        if (championSpellsVideosLinksList[0] !== "NA") {
+            const videoButton = document.createElement("button")
+            videoButton.textContent = "See the video"
+            videoButton.classList.add("px-2", "py-2", "rounded-md", "bg-primary", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm")
+
+            videoButton.addEventListener("click", () => {
+                showModal(championSpellsVideosLinksList[0])
+            })
+
+            htmlChampionPassiveVideo.appendChild(videoButton)
+        } else {
+            const spellVideoPlaceholder = document.createElement("div")
+            spellVideoPlaceholder.classList.add("sm:mr-auto", "w-full") // Styles pour la placeholder
+            spellVideoPlaceholder.textContent = "No video available" // Placeholder si aucune vidéo disponible
+            htmlChampionPassiveVideo.appendChild(spellVideoPlaceholder)
+        }
 
         // Display spells info
         htmlChampionSpellsList.textContent = ""
@@ -106,7 +122,7 @@ async function DisplaySingleChampion() {
             small.classList.add("text-white", "bg-primary", "w-fit", "px-2", "py-1", "rounded-md")
 
             const spellContainer = document.createElement("div")
-            spellContainer.classList.add("flex", "items-center", "gap-4", "flex-col", "sm:flex-row")
+            spellContainer.classList.add("flex", "items-center", "sm:items-end", "gap-4", "flex-col", "sm:flex-row")
 
             const spellIcon = document.createElement("img")
             spellIcon.src = spell.image
@@ -125,21 +141,24 @@ async function DisplaySingleChampion() {
             spellDescription.classList.add("text-sm", "text-justify")
 
             const spellStats = document.createElement("div")
-            spellStats.classList.add("ml-auto", "flex", "justify-center", "items-center", "flex-col", "sm:flex-row", "gap-4", "text-xs", "sm:text-sm", "bg-border", "rounded-md", "text-white", "w-full", "p-2")
+            spellStats.classList.add("ml-auto", "flex", "flex-col-reverse", "sm:flex-row-reverse", "justify-center", "items-center", "gap-4", "text-xs", "sm:text-sm", "rounded-md", "sm:w-fit", "w-full", "text-white")
 
             if (championSpellsVideosLinksList[index + 1] !== "NA") {
-                const spellVideo = document.createElement("video")
-                spellVideo.src = championSpellsVideosLinksList[index + 1] // Associe la vidéo correcte pour chaque sort
-                spellVideo.controls = true // Ajoute les contrôles de lecture
-                spellVideo.classList.add("sm:w-1/3", "h-auto", "rounded-md", "sm:mr-auto") // Styles pour la vidéo
-                spellStats.appendChild(spellVideo)
+                const videoButton = document.createElement("button")
+                videoButton.textContent = "See the video"
+                videoButton.classList.add("sm:mr-auto", "bg-primary", "px-2", "py-2", "rounded-md", "self-end", "text-nowrap")
+
+                videoButton.addEventListener("click", () => {
+                    showModal(championSpellsVideosLinksList[index + 1])
+                })
+
+                spellStats.appendChild(videoButton)
             } else {
                 const spellVideoPlaceholder = document.createElement("div")
                 spellVideoPlaceholder.classList.add("sm:mr-auto", "w-full") // Styles pour la placeholder
                 spellVideoPlaceholder.textContent = "No Video Available" // Placeholder si aucune vidéo disponible
                 spellStats.appendChild(spellVideoPlaceholder)
             }
-
 
             const spellCooldown = document.createElement("div")
             spellCooldown.textContent = `Cooldown(s): ${spell.cooldown}`
@@ -148,9 +167,9 @@ async function DisplaySingleChampion() {
             const spellRange = document.createElement("div")
             spellRange.textContent = `Range(s): ${spell.range}`
 
-            spellCooldown.classList.add("text-nowrap")
-            spellCost.classList.add("text-nowrap")
-            spellRange.classList.add("text-nowrap")
+            spellCooldown.classList.add("text-nowrap", "bg-border", "rounded-md", "p-2", "w-full", "text-center")
+            spellCost.classList.add("text-nowrap", "bg-border", "rounded-md", "p-2", "w-full", "text-center")
+            spellRange.classList.add("text-nowrap", "bg-border", "rounded-md", "p-2", "w-full", "text-center")
 
             spellStats.appendChild(spellRange)
             spellStats.appendChild(spellCost)
@@ -165,6 +184,38 @@ async function DisplaySingleChampion() {
 
             htmlChampionSpellsList.appendChild(spellElement)
         })
+
+        // Function to show modal
+        function showModal(videoSrc) {
+            const modal = document.getElementById("videoModal")
+            const modalVideo = document.getElementById("modalVideo")
+
+            modalVideo.src = videoSrc
+            modal.classList.remove("hidden")
+            modal.classList.add("flex")
+
+            // Play video when modal is shown
+            modalVideo.play()
+        }
+
+        // Function to hide modal
+        function hideModal() {
+            const modal = document.getElementById("videoModal")
+            const modalVideo = document.getElementById("modalVideo")
+
+            // Pause video when modal is hidden
+            modalVideo.pause()
+            modal.classList.remove("flex")
+            modal.classList.add("hidden")
+        }
+
+        // Close modal when clicking outside of the video
+        window.onclick = function (event) {
+            const modal = document.getElementById("videoModal")
+            if (event.target == modal) {
+                hideModal()
+            }
+        }
 
         // Update progress bars
         const updateBars = (sectionId, scoreId, value) => {

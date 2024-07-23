@@ -105,14 +105,14 @@
             <h3 class="text-3xl font-semibold leading-none tracking-tight w-full text-center">Spells</h3>
             <div id="champion-passive" class="flex flex-col bg-background border border-border rounded-md p-4 gap-4">
                 <small class="text-white bg-primary w-fit px-2 py-1 rounded-md">Passive</small>
-                <div class="flex items-center gap-4 flex-col sm:flex-row">
+                <div class="flex items-center sm:items-end gap-4 flex-col sm:flex-row">
                     <img id="champion-passive-icon" src="" alt="passive-icon" class="w-16 h-16">
                     <div class="space-y-8 sm:space-y-0">
                         <h5 id="champion-passive-name" class="text-lg font-semibold text-center sm:text-start"></h5>
                         <p id="champion-passive-description" class="text-sm text-justify"></p>
                     </div>
+                    <div id="champion-passive-video" class="ml-auto"></div>
                 </div>
-                <video id="passive-video" controls src="" class="w-full sm:w-1/3 m-auto rounded-md"></video>
             </div>
             <div id="champion-spells-list" class="flex flex-col gap-4"></div>
         </div>
@@ -262,6 +262,14 @@
         <div class="w-full px-2 sm:px-14 md:px-44 grid gap-10">
             <h3 class="text-3xl font-semibold leading-none tracking-tight text-center">Skins</h3>
             <div id="rectangle-images" class="flex justify-start items-center gap-6 overflow-x-auto"></div>
+        </div>
+
+
+        <!-- SPELL VIDEO MODAL -->
+        <div id="videoModal" class="fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-75 hidden">
+            <div class="bg-background p-4 rounded-md relative max-w-4xl w-full mx-4">
+                <video id="modalVideo" controls class="w-full h-auto rounded-md"></video>
+            </div>
         </div>
 
     </main>

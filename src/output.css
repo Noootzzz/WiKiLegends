@@ -1024,10 +1024,6 @@ video {
   width: 100%;
 }
 
-.max-w-2xl {
-  max-width: 42rem;
-}
-
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -1086,10 +1082,6 @@ video {
 
 .items-start {
   align-items: flex-start;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 .items-center {
@@ -1242,6 +1234,11 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(247 249 251 / var(--tw-border-opacity));
+}
+
+.bg-accent {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 37 40 / var(--tw-bg-opacity));
 }
 
 .bg-background {
@@ -1509,6 +1506,20 @@ html {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+#rectangle-images::-webkit-scrollbar {
+  height: 1rem;
+}
+
+#rectangle-images::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 6px;
+}
+
+#rectangle-images::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #3576DF;
 }
 
 #filters label:has(> input[type="checkbox"]:checked),

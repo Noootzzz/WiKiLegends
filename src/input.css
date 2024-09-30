@@ -9,7 +9,20 @@ html {
 
 body::-webkit-scrollbar {
     display: none;
+}
 
+#rectangle-images::-webkit-scrollbar {
+    height: 1rem;
+}
+
+#rectangle-images::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 6px;
+}
+
+#rectangle-images::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #3576DF;
 }
 
 #filters label:has(> input[type="checkbox"]:checked),
@@ -109,5 +122,4 @@ body::-webkit-scrollbar {
     .custom-role-support {
         @apply text-slate-400 border-slate-700 sm:m-2 w-full;
     }
-
 }

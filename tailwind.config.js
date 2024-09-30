@@ -24,22 +24,5 @@ module.exports = {
       },
     },
   },
-  // variants: {
-  //   extend: {
-  //     scrollbar: ['rounded'],
-  //   },
-  // },
-  plugins: [
-    // function ({ addUtilities }) {
-    //   addUtilities({
-    //     '.no-scrollbar': {
-    //       'scrollbar-width': 'none', /* Firefox */
-    //       '-ms-overflow-style': 'none', /* Internet Explorer and Edge */
-    //     },
-    //     '.no-scrollbar::-webkit-scrollbar': {
-    //       display: 'none', /* Safari and Chrome */
-    //     },
-    //   });
-    // },
-  ],
+  plugins: [],
 };

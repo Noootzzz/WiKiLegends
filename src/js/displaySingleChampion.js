@@ -96,7 +96,7 @@ async function DisplaySingleChampion() {
         if (championSpellsVideosLinksList[0] !== "NA") {
             const videoButton = document.createElement("button")
             videoButton.textContent = "See the video"
-            videoButton.classList.add("px-2", "py-2", "rounded-md", "bg-primary", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm")
+            videoButton.classList.add("p-2", "rounded-md", "bg-primary", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm")
 
             videoButton.addEventListener("click", () => {
                 showModal(championSpellsVideosLinksList[0])
@@ -105,7 +105,7 @@ async function DisplaySingleChampion() {
             htmlChampionPassiveVideo.appendChild(videoButton)
         } else {
             const spellVideoPlaceholder = document.createElement("div")
-            spellVideoPlaceholder.classList.add("sm:mr-auto", "w-full") // Styles pour la placeholder
+            spellVideoPlaceholder.classList.add("p-2", "rounded-md", "bg-accent", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm") // Styles pour la placeholder
             spellVideoPlaceholder.textContent = "No video available" // Placeholder si aucune vidéo disponible
             htmlChampionPassiveVideo.appendChild(spellVideoPlaceholder)
         }
@@ -155,7 +155,7 @@ async function DisplaySingleChampion() {
                 spellStats.appendChild(videoButton)
             } else {
                 const spellVideoPlaceholder = document.createElement("div")
-                spellVideoPlaceholder.classList.add("sm:mr-auto", "w-full") // Styles pour la placeholder
+                spellVideoPlaceholder.classList.add("p-2", "rounded-md", "bg-accent", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm") // Styles pour la placeholder
                 spellVideoPlaceholder.textContent = "No Video Available" // Placeholder si aucune vidéo disponible
                 spellStats.appendChild(spellVideoPlaceholder)
             }

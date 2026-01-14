@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WikiLegends</title>
-    <link rel="stylesheet" href="./output.css">
-    <link rel="shortcut icon" href="./img/Logo_WikiLegends.png" type="image/png">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-</head>
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="shortcut icon"
+      href="./img/Logo_WikiLegends.png"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden p-10 sm:p-20 min-h-screen relative grid grid-rows-[1fr_auto]">
-    
-    <div class="gap-5 flex flex-col justify-start items-center">
-        <h1
-            class="relative flex flex-wrap items-center justify-center gap-2 text-4xl font-bold max-lg:text-center lg:text-5xl text-white">
-            <span class="rounded-md bg-primary px-2 py-1 lg:px-4 lg:py-2">Wiki</span>Legends
+  <body
+    class="font-poppins bg-gradient-to-br from-background via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen flex flex-col gap-10"
+  >
+    <header class="wl-header">
+      <nav class="wl-container flex items-center justify-between py-4">
+        <a class="wl-brand" href="./index.html">
+          <span class="wl-title-badge">Wiki</span>
+          <span class="text-lg sm:text-xl">Legends</span>
+        </a>
+
+        <div class="hidden sm:flex items-center gap-2">
+          <a class="wl-navlink" href="./champions/champions.html">Champions</a>
+          <a class="wl-navlink" href="#">Items</a>
+          <a class="wl-navlink" href="#">Runes</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="wl-container py-12 sm:py-16 flex-1">
+      <section class="text-center space-y-6">
+        <h1 class="wl-title">
+          <span class="wl-title-badge">Wiki</span>Legends
         </h1>
         <div
-            class="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-15 md:gap-20 m-auto h-5/6 sm:h-3/4 mt-10">
-            <div
-                class="bg-background h-auto flex justify-center items-start flex-col space-y-1.5 p-6 text-white border border-border rounded-md gap-8 sm:gap-10">
-                <h3 class="text-lg content-center sm:text-2xl font-semibold leading-none tracking-tight">Items
-                    Collection</h3>
-                <div class="flex flex-col gap-4 sm:gap-10">
-                    <p class="text-justify text-xs sm:text-sm text-grey">Here you will find the entire League of Legends
-                        <span class="font-semibold text-primary">Items</span>
-                        collection, their
-                        specificities and more!
-                    </p>
-                    <a href="#"
-                        class="flex items-center justify-center self-center sm:self-end whitespace-nowrap rounded-md text-sm ring-offset-background transition duration-tr focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-white hover:bg-primary/80 h-10 px-4 py-2 font-bold">Coming Soon!</a>
-                </div>
-            </div>
-            <div
-                class="bg-background h-auto flex justify-center items-start flex-col space-y-1.5 p-6 text-white border border-border rounded-md gap-8 sm:gap-10">
-                <h3 class="text-lg content-center sm:text-2xl font-semibold leading-none tracking-tight">Champions
-                    Collection</h3>
-                <div class="flex flex-col gap-4 sm:gap-10">
-                    <p class="text-justify text-xs sm:text-sm text-grey">Here you will find the entire League of Legends
-                        <span class="font-semibold text-primary">Champions</span>
-                        collection, their
-                        specificities and more!
-                    </p>
-                    <a href="./champions/champions.html"
-                        class="flex items-center justify-center self-center sm:self-end whitespace-nowrap rounded-md text-sm ring-offset-background transition duration-tr focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-white hover:bg-primary/80 h-10 px-4 py-2 font-bold">Let's
-                        See!</a>
-                </div>
-            </div>
-            <div
-                class="bg-background h-auto flex justify-center items-start flex-col space-y-1.5 p-6 text-white border border-border rounded-md gap-8 sm:gap-10">
-                <h3 class="text-lg content-center sm:text-2xl font-semibold leading-none tracking-tight">Runes
-                    Collection</h3>
-                <div class="flex flex-col gap-4 sm:gap-10">
-                    <p class="text-justify text-xs sm:text-sm text-grey">Here you will find the entire League of Legends
-                        <span class="font-semibold text-primary">Runes</span>
-                        collection, their
-                        specificities and more!
-                    </p>
-                    <a href="#"
-                        class="flex items-center justify-center self-center sm:self-end whitespace-nowrap rounded-md text-sm ring-offset-background transition duration-tr focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-white hover:bg-primary/80 h-10 px-4 py-2 font-bold">Coming Soon!</a>
-                </div>
-            </div>
+          class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3"
+        >
+          <a href="./champions/champions.html" class="wl-btn-primary"
+            >Browse Champions</a
+          >
         </div>
-    </div>
+      </section>
 
-    <footer class="text-grey text-center">
-        <h2></h2>
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        <div class="wl-card wl-card-hover p-8 flex flex-col gap-6">
+          <h3 class="wl-card-title">Champions</h3>
+          <p class="wl-card-text">
+            Search, sort, and filter by role and damage type.
+          </p>
+          <div class="pt-2">
+            <a href="./champions/champions.html" class="wl-btn-primary w-full"
+              >Open</a
+            >
+          </div>
+        </div>
+
+        <div class="wl-card wl-card-hover p-8 flex flex-col gap-6">
+          <h3 class="wl-card-title">Runes</h3>
+          <p class="wl-card-text">Browse rune trees with quick visual cards.</p>
+          <div class="pt-2">
+            <a href="#" class="wl-btn-ghost w-full">In Developpement</a>
+          </div>
+        </div>
+
+        <div class="wl-card wl-card-hover p-8 flex flex-col gap-6">
+          <h3 class="wl-card-title">Items</h3>
+          <p class="wl-card-text">
+            Item database (page ready, content in progress).
+          </p>
+          <div class="pt-2">
+            <a href="#" class="wl-btn-ghost w-full">In Developpement</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wl-container text-grey text-center py-10">
+      <h2></h2>
     </footer>
 
     <script type="module" src="./js/dynamicDate.js"></script>
-</body>
-
+  </body>
 </html>

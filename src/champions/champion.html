@@ -1,287 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Champion</title>
-    <link rel="stylesheet" href="../output.css">
-    <link rel="shortcut icon" href="../img/Logo_WikiLegends.png" type="image/png">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-</head>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="shortcut icon"
+      href="../img/Logo_WikiLegends.png"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+  </head>
 
-<body
-    class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen relative grid grid-rows-[auto_1fr_auto] gap-20">
-    <header class="flex justify-between items-center text-white text-lg font-semibold bg-transparent w-full">
-        <nav class="flex items-center justify-between flex-wrap border-b border-border p-6 w-full z-10">
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <a class="text-white no-underline hover:text-white hover:no-underline" href="../index.html">
-                    <h1
-                        class="relative flex flex-wrap items-center justify-center gap-2 text-sm font-bold max-lg:text-center lg:text-lg text-white">
-                        <span class="rounded-md bg-primary px-2 py-1 lg:px-2 lg:py-1">Wiki</span>Legends
-                    </h1>
-                </a>
-            </div>
+  <body
+    class="font-poppins bg-gradient-to-br from-background via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen grid grid-rows-[auto_1fr_auto]"
+  >
+    <header class="wl-header">
+      <nav class="wl-container flex items-center justify-between py-4">
+        <a class="wl-brand" href="../index.html">
+          <span class="wl-title-badge">Wiki</span>
+          <span class="text-lg sm:text-xl">Legends</span>
+        </a>
 
-            <div class="block lg:hidden">
-                <button id="nav-toggle"
-                    class="flex items-center px-3 py-2 border-2 rounded-md text-white border-white hover:text-primary hover:border-primary">
-                    <svg class="fill-current h-5 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                    </svg>
-                </button>
-            </div>
+        <div class="block lg:hidden">
+          <button
+            id="nav-toggle"
+            aria-label="Toggle menu"
+            aria-controls="nav-content"
+            class="flex items-center px-3 py-2 border rounded-md text-white border-border/70 bg-secondary/10 hover:bg-secondary/30 duration-tr"
+          >
+            <svg
+              class="fill-current h-5 w-4"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
 
-            <div class="w-full flex-grow lg:items-center lg:w-auto hidden lg:flex pt-6 lg:pt-0" id="nav-content">
-                <ul class="list-reset lg:flex justify-end flex-1 items-center gap-10">
-                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
-                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                            href="#">Items</a>
-                    </li>
-                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
-                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                            href="#">Champions</a>
-                    </li>
-                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
-                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                            href="#">Runes</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="w-full lg:w-auto hidden lg:flex" id="nav-content">
+          <ul
+            class="list-reset flex flex-col lg:flex-row justify-end items-start lg:items-center gap-2 pt-4 lg:pt-0"
+          >
+            <li><a class="wl-navlink" href="#">Items</a></li>
+            <li>
+              <a class="wl-navlink" href="../champions/champions.html"
+                >Champions</a
+              >
+            </li>
+            <li><a class="wl-navlink" href="#">Runes</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <a href="./champions.html">
-        <h1
-            class="relative flex flex-wrap items-center justify-center gap-2 text-4xl font-bold max-lg:text-center lg:text-5xl text-white">
-            <span class="rounded-md bg-primary px-2 py-1 lg:px-4 lg:py-2">Go</span>Back
-        </h1>
-    </a>
+    <main class="wl-container py-10 sm:py-12 text-white">
+      <div class="flex justify-center">
+        <a href="./champions.html" class="wl-btn-ghost">← Back to list</a>
+      </div>
 
-    <main class="flex flex-col justify-start items-center gap-10 w-full text-white min-h-screen">
-        <!-- CHAMPION DESCRIPTION -->
-        <div id="champion-description"
-            class="flex justify-center items-center flex-col px-2 sm:px-14 md:px-44 min-w-10/12 gap-4 sm:gap-10">
+      <!-- LOADING SPINNER -->
+      <div
+        id="champion-skeleton"
+        class="flex flex-col justify-center items-center h-[50vh] gap-6"
+      >
+        <!-- Spinner Ring -->
+        <div
+          class="animate-spin rounded-full h-20 w-20 border-[6px] border-secondary border-t-primary"
+        ></div>
+        <h2 class="text-2xl font-bold text-white tracking-widest animate-pulse">
+          LOADING...
+        </h2>
+      </div>
 
+      <div id="champion-content" class="w-full hidden">
+        <div class="w-full flex flex-col items-center gap-10">
+          <!-- CHAMPION DESCRIPTION -->
+          <div
+            id="champion-description"
+            class="flex justify-center items-center flex-col w-full gap-6 sm:gap-10"
+          >
             <div class="flex justify-center items-center w-full">
-                <div class="flex flex-col justify-center items-center gap-4 sm:gap-10 w-full">
-                    <img id="champion-avatar" src="" alt="avatar" class="">
-                    <h3 id="champion-name"
-                        class="text-4xl font-semibold leading-none tracking-tight w-full text-center">
-                    </h3>
-                </div>
+              <div
+                class="flex flex-col justify-center items-center gap-4 sm:gap-10 w-full"
+              >
+                <img
+                  id="champion-avatar"
+                  src=""
+                  alt="avatar"
+                  class="w-40 sm:w-56 rounded-xl ring-1 ring-border/70 shadow-lg shadow-black/25"
+                />
+                <h3
+                  id="champion-name"
+                  class="text-4xl font-semibold leading-none tracking-tight w-full text-center"
+                ></h3>
+              </div>
             </div>
 
-
-            <div class="flex justify-between items-stretch w-full sm:flex-row gap-4 text-nowrap flex-col">
+            <div
+              class="flex justify-between items-stretch w-full sm:flex-row gap-4 text-nowrap flex-col"
+            >
+              <div
+                class="wl-card flex justify-center items-center flex-col gap-5 h-full p-4 flex-1 w-full sm:order-1 order-2"
+              >
+                <h4 class="sm:text-lg text-xs text-nowrap">Categorie(s):</h4>
                 <div
-                    class="bg-background flex justify-center items-center flex-col gap-5 h-full border border-border rounded-md p-4 flex-1 w-full sm:order-1 order-2">
-                    <h4 class="sm:text-lg text-xs text-nowrap">Categorie(s):</h4>
-                    <div id="champion-tags" class="flex justify-between items-center flex-wrap  w-full gap-2"></div>
-                </div>
-                <div
-                    class="flex justify-center items-center bg-background border border-border rounded-md w-full sm:order-2 order-1 flex-1">
-                    <h4 id="champion-title"
-                        class="capitalize text-center p-6 text-white text-nowrap text-lg sm:text-xl w-full"></h4>
-                </div>
-                <div
-                    class="flex justify-center items-center flex-col gap-5 border border-border rounded-md p-4 bg-background flex-1 w-full order-3">
-                    <h4 class="sm:text-lg text-xs text-nowrap ">Damage type:</h4>
-                    <h4 id="champion-damage"
-                        class="custom-role border-primary sm:m-2 p-1 m:p-3 sm:text-sm text-xs w-full "></h4>
-                </div>
+                  id="champion-tags"
+                  class="flex justify-between items-center flex-wrap w-full gap-2"
+                ></div>
+              </div>
+              <div
+                class="wl-card flex justify-center items-center w-full sm:order-2 order-1 flex-1"
+              >
+                <h4
+                  id="champion-title"
+                  class="capitalize text-center p-6 text-white text-nowrap text-lg sm:text-xl w-full"
+                ></h4>
+              </div>
+              <div
+                class="wl-card flex justify-center items-center flex-col gap-5 p-4 flex-1 w-full order-3"
+              >
+                <h4 class="sm:text-lg text-xs text-nowrap">Damage type:</h4>
+                <h4
+                  id="champion-damage"
+                  class="custom-role border-primary sm:m-2 p-1 m:p-3 sm:text-sm text-xs w-full"
+                ></h4>
+              </div>
             </div>
             <div class="grid gap-10 sm:pt-0 pt-6">
-                <h3 class="text-3xl font-semibold leading-none tracking-tight w-full text-center">Lore</h3>
-                <h4 id="champion-lore"
-                    class="bg-background p-6 text-white text-justify border border-border rounded-md text-sm sm:text-lg leading-5">
-                </h4>
+              <h3
+                class="text-3xl font-semibold leading-none tracking-tight w-full text-center"
+              >
+                Lore
+              </h3>
+              <h4
+                id="champion-lore"
+                class="wl-card p-6 text-white text-justify text-sm sm:text-lg leading-6"
+              ></h4>
             </div>
-        </div>
+          </div>
 
-        <!-- CHAMPION SPELLS -->
-        <div id="champion-spells" class="flex flex-col gap-10 w-full px-2 sm:px-14 md:px-44">
-            <h3 class="text-3xl font-semibold leading-none tracking-tight w-full text-center">Spells</h3>
-            <div id="champion-passive" class="flex flex-col bg-background border border-border rounded-md p-4 gap-4">
-                <small class="text-white bg-primary w-fit px-2 py-1 rounded-md">Passive</small>
-                <div class="flex items-center sm:items-end gap-4 flex-col sm:flex-row">
-                    <img id="champion-passive-icon" src="" alt="passive-icon" class="w-16 h-16">
-                    <div class="space-y-8 sm:space-y-0">
-                        <h5 id="champion-passive-name" class="text-lg font-semibold text-center sm:text-start"></h5>
-                        <p id="champion-passive-description" class="text-sm text-justify"></p>
-                    </div>
-                    <div id="champion-passive-video" class="ml-auto"></div>
+          <!-- CHAMPION SPELLS -->
+          <div id="champion-spells" class="flex flex-col gap-10 w-full">
+            <h3
+              class="text-3xl font-semibold leading-none tracking-tight w-full text-center"
+            >
+              Spells
+            </h3>
+            <div id="champion-passive" class="wl-card flex flex-col p-4 gap-4">
+              <small class="text-white bg-primary w-fit px-2 py-1 rounded-md"
+                >Passive</small
+              >
+              <div
+                class="flex items-center sm:items-end gap-4 flex-col sm:flex-row"
+              >
+                <img
+                  id="champion-passive-icon"
+                  src=""
+                  alt="passive-icon"
+                  class="w-16 h-16"
+                />
+                <div class="space-y-8 sm:space-y-0">
+                  <h5
+                    id="champion-passive-name"
+                    class="text-lg font-semibold text-center sm:text-start"
+                  ></h5>
+                  <p
+                    id="champion-passive-description"
+                    class="text-sm text-justify"
+                  ></p>
                 </div>
+                <div id="champion-passive-video" class="ml-auto"></div>
+              </div>
             </div>
             <div id="champion-spells-list" class="flex flex-col gap-4"></div>
-        </div>
+          </div>
 
-        <!-- CHAMPIONS INFOS -->
-        <div class=" w-full px-2 sm:px-14 md:px-44 grid gap-10">
-            <h3 class="text-3xl font-semibold leading-none tracking-tight w-full text-center">Infos</h3>
+          <!-- CHAMPIONS INFOS -->
+          <div class="w-full grid gap-10">
+            <h3
+              class="text-3xl font-semibold leading-none tracking-tight w-full text-center"
+            >
+              Infos
+            </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-
-                <div class="grid bg-background border border-border p-4 rounded-md gap-8">
-                    <div id="attack-section" class="grid place-items-start gap-4 w-full">
-                        <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">Attack</h3>
-                        <div class="flex items-center gap-x-1 w-full" id="attack-bars">
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <span id="attack-score"
-                                class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"></span>
-                        </div>
-                    </div>
-                    <div id="defense-section" class="grid place-items-start gap-4 w-full">
-                        <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">Defense</h3>
-                        <div class="flex items-center gap-x-1 w-full" id="defense-bars">
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <span id="defense-score"
-                                class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"></span>
-                        </div>
-                    </div>
-
-                    <div id="magic-section" class="grid place-items-start gap-4 w-full">
-                        <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">Magic</h3>
-                        <div class="flex items-center gap-x-1 w-full" id="magic-bars">
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <span id="magic-score"
-                                class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"></span>
-                        </div>
-                    </div>
+              <div class="wl-card grid p-4 gap-8">
+                <div
+                  id="attack-section"
+                  class="grid place-items-start gap-4 w-full"
+                >
+                  <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">
+                    Attack
+                  </h3>
+                  <div
+                    class="flex items-center gap-x-1 w-full"
+                    id="attack-bars"
+                  >
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <span
+                      id="attack-score"
+                      class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"
+                    ></span>
+                  </div>
+                </div>
+                <div
+                  id="defense-section"
+                  class="grid place-items-start gap-4 w-full"
+                >
+                  <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">
+                    Defense
+                  </h3>
+                  <div
+                    class="flex items-center gap-x-1 w-full"
+                    id="defense-bars"
+                  >
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <span
+                      id="defense-score"
+                      class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"
+                    ></span>
+                  </div>
                 </div>
 
                 <div
-                    class="w-full bg-background border border-border rounded-md p-4 flex flex-col justify-evenly items-center">
-                    <div id="difficulty-section" class="grid place-items-center gap-4 w-full text-sm">
-                        <h3 class="bg-primary rounded-md w-fit px-2 py-1">Difficulty</h3>
-                        <div class="flex items-center gap-x-1 w-full" id="difficulty-bars">
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                            <div class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
-                                role="progressbar"></div>
-                        </div>
-                        <span id="difficulty-score"
-                            class="ml-2 text-white bg-border rounded-md px-2 py-1 text-nowrap text-sm"></span>
-                    </div>
-
-
-
+                  id="magic-section"
+                  class="grid place-items-start gap-4 w-full"
+                >
+                  <h3 class="bg-primary text-sm rounded-md w-fit px-2 py-1">
+                    Magic
+                  </h3>
+                  <div class="flex items-center gap-x-1 w-full" id="magic-bars">
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <span
+                      id="magic-score"
+                      class="ml-2 rounded-md px-2 py-1 text-white text-nowrap text-sm"
+                    ></span>
+                  </div>
                 </div>
+              </div>
 
+              <div
+                class="wl-card w-full p-4 flex flex-col justify-evenly items-center"
+              >
+                <div
+                  id="difficulty-section"
+                  class="grid place-items-center gap-4 w-full text-sm"
+                >
+                  <h3 class="bg-primary rounded-md w-fit px-2 py-1">
+                    Difficulty
+                  </h3>
+                  <div
+                    class="flex items-center gap-x-1 w-full"
+                    id="difficulty-bars"
+                  >
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                    <div
+                      class="w-full h-2.5 rounded-sm flex flex-col justify-center overflow-hidden text-xs text-white text-center whitespace-nowrap bg-border"
+                      role="progressbar"
+                    ></div>
+                  </div>
+                  <span
+                    id="difficulty-score"
+                    class="ml-2 text-white bg-border rounded-md px-2 py-1 text-nowrap text-sm"
+                  ></span>
+                </div>
+              </div>
             </div>
+          </div>
 
+          <!-- CHAMPIONS TIPS -->
+          <div class="w-full grid gap-4">
+            <small class="bg-primary px-2 py-1 rounded-md w-fit"
+              >Ally Tips</small
+            >
+            <div
+              id="champion-ally-tips"
+              class="wl-card flex gap-4 text-primary items-start flex-col p-4 text-justify"
+            ></div>
+            <small class="bg-primary px-2 py-1 rounded-md w-fit"
+              >Enemy Tips</small
+            >
+            <div
+              id="champion-enemy-tips"
+              class="wl-card flex gap-4 text-primary items-start flex-col p-4 text-justify"
+            ></div>
+          </div>
+
+          <!-- CHAMPIONS IMGS RECTANGLES -->
+          <div class="w-full grid gap-10">
+            <h3
+              class="text-3xl font-semibold leading-none tracking-tight text-center"
+            >
+              Skins
+            </h3>
+            <div
+              id="rectangle-images"
+              class="wl-card p-4 flex justify-start items-center gap-6 overflow-x-auto"
+            ></div>
+          </div>
         </div>
+      </div>
 
-        <!-- CHAMPIONS TIPS -->
-        <div class="w-full px-2 sm:px-14 md:px-44 grid gap-4">
-            <small class="bg-primary px-2 py-1 rounded-md w-fit">Ally Tips</small>
-            <div id="champion-ally-tips"
-                class="flex gap-4 text-primary items-start flex-col p-4 border border-border bg-background text-justify rounded-md">
-            </div>
-            <small class="bg-primary px-2 py-1 rounded-md w-fit">Enemy Tips</small>
-            <div id="champion-enemy-tips"
-                class="flex gap-4 text-primary items-start flex-col p-4 border border-border bg-background text-justify rounded-md">
-            </div>
+      <!-- SPELL VIDEO MODAL -->
+      <div
+        id="videoModal"
+        class="fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-75 hidden"
+      >
+        <div class="wl-card p-4 relative max-w-4xl w-full mx-4">
+          <video
+            id="modalVideo"
+            controls
+            class="w-full h-auto rounded-md"
+          ></video>
         </div>
-
-        <!-- CHAMPIONS IMGS RECTANGLES -->
-        <div class="w-full px-2 sm:px-14 md:px-44 grid gap-10">
-            <h3 class="text-3xl font-semibold leading-none tracking-tight text-center">Skins</h3>
-            <div id="rectangle-images" class="rounded-md flex justify-start items-center gap-6 overflow-x-auto"></div>
-        </div>
-
-
-        <!-- SPELL VIDEO MODAL -->
-        <div id="videoModal" class="fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-75 hidden">
-            <div class="bg-background p-4 rounded-md relative max-w-4xl w-full mx-4">
-                <video id="modalVideo" controls class="w-full h-auto rounded-md"></video>
-            </div>
-        </div>
-
+      </div>
     </main>
 
-    <footer class="text-center p-8 text-grey w-full m-auto">
-        <h2></h2>
+    <footer class="wl-container text-center py-8 text-grey w-full">
+      <h2></h2>
     </footer>
-
-
 
     <script type="module" src="../js/displaySingleChampion.js"></script>
     <script src="../js/toggleHeader.js"></script>
     <script type="module" src="../js/dynamicDate.js"></script>
-</body>
-
+  </body>
 </html>

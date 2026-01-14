@@ -21,7 +21,7 @@ async function CreateTableRow(championId, championIndex, championName) {
     const tdAvatar = document.createElement("td")
     tdAvatar.classList.add("custom-td")
     const img = document.createElement("img")
-    img.src = GetSquareChampionImageURL(championId)
+    img.src = await GetSquareChampionImageURL(championId)
     img.alt = `${championName} avatar`
     img.classList.add("avatar-img")
     tdAvatar.appendChild(img)

@@ -2,124 +2,207 @@
 @tailwind components;
 @tailwind utilities;
 
-body,
-html {
+@layer base {
+  html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(53, 118, 223, 0.35);
+    color: #f7f9fb;
+  }
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 #rectangle-images::-webkit-scrollbar {
-    height: 1rem;
+  height: 1rem;
 }
 
 #rectangle-images::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 6px;
+  background: transparent;
+  border-radius: 6px;
 }
 
 #rectangle-images::-webkit-scrollbar-thumb {
-    border-radius: 6px;
-    background-color: #3576DF;
+  border-radius: 6px;
+  background-color: #3576df;
 }
 
 #filters label:has(> input[type="checkbox"]:checked),
 #filters label:has(> input[type="radio"]:checked) {
-    outline: 2px solid #3576DF;
-    color: #F7F9FB;
+  outline: 2px solid #3576df;
+  color: #f7f9fb;
 }
 
+@layer components {
+  .wl-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .wl-header {
+    @apply sticky top-0 z-50 border-b border-border/70 bg-background/40 backdrop-blur-md;
+  }
+
+  .wl-brand {
+    @apply inline-flex items-center gap-2 font-bold text-white;
+  }
+
+  .wl-navlink {
+    @apply rounded-md px-3 py-2 text-sm font-semibold text-grey hover:text-white hover:bg-secondary/60 duration-tr;
+  }
+
+  .wl-card {
+    @apply rounded-xl border border-border/70 bg-background/70 shadow-lg shadow-black/20 backdrop-blur-md;
+  }
+
+  .wl-card-hover {
+    @apply duration-tr hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30;
+  }
+
+  .wl-card-title {
+    @apply text-lg sm:text-2xl font-semibold tracking-tight text-white;
+  }
+
+  .wl-card-text {
+    @apply text-grey text-xs sm:text-sm leading-relaxed;
+  }
+
+  .wl-btn-primary {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold h-10 px-4 py-2 bg-primary text-white hover:bg-primary/85 duration-tr focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60;
+  }
+
+  .wl-btn-ghost {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold h-10 px-4 py-2 border border-border/70 bg-secondary/20 text-white hover:bg-secondary/40 duration-tr focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60;
+  }
+
+  .wl-btn-sm {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs sm:text-sm font-bold px-3 py-2 bg-primary text-white hover:bg-primary/85 duration-tr focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60;
+  }
+
+  .wl-pill {
+    @apply rounded-md bg-secondary/40 border border-border/70 px-2 py-1 text-xs text-white;
+  }
+
+  .wl-btn-disabled {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold h-10 px-4 py-2 bg-secondary/30 text-grey cursor-not-allowed;
+  }
+
+  .wl-input {
+    @apply shadow-sm h-11 w-full rounded-md caret-white text-white border border-border/70 bg-background/60 px-4 py-2 text-sm placeholder:text-grey backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60;
+  }
+
+  .wl-kicker {
+    @apply text-xs sm:text-sm uppercase tracking-[0.2em] text-grey;
+  }
+
+  .wl-title {
+    @apply text-4xl sm:text-5xl font-extrabold tracking-tight text-white;
+  }
+
+  .wl-title-badge {
+    @apply rounded-md bg-primary px-2 py-1 sm:px-4 sm:py-2;
+  }
+}
 
 @layer components {
+  #filters label:has(> input[type="checkbox"]:checked):nth-child(1) {
+    @apply outline-pink-700 text-pink-400;
+  }
 
-    #filters label:has(> input[type="checkbox"]:checked):nth-child(1) {
-        @apply outline-pink-700 text-pink-400
-    }
+  #filters label:has(> input[type="checkbox"]:checked):nth-child(2) {
+    @apply outline-green-700 text-green-400;
+  }
 
-    #filters label:has(> input[type="checkbox"]:checked):nth-child(2) {
-        @apply outline-green-700 text-green-400
-    }
+  #filters label:has(> input[type="checkbox"]:checked):nth-child(3) {
+    @apply outline-violet-700 text-violet-400;
+  }
 
-    #filters label:has(> input[type="checkbox"]:checked):nth-child(3) {
-        @apply outline-violet-700 text-violet-400
-    }
+  #filters label:has(> input[type="checkbox"]:checked):nth-child(4) {
+    @apply outline-yellow-700 text-yellow-400;
+  }
 
-    #filters label:has(> input[type="checkbox"]:checked):nth-child(4) {
-        @apply outline-yellow-700 text-yellow-400
-    }
+  #filters label:has(> input[type="checkbox"]:checked):nth-child(5) {
+    @apply outline-gray-700 text-gray-400;
+  }
 
-    #filters label:has(> input[type="checkbox"]:checked):nth-child(5) {
-        @apply outline-gray-700 text-gray-400
-    }
+  #filters label:has(> input[type="checkbox"]:checked):nth-child(6) {
+    @apply outline-blue-700 text-blue-400;
+  }
 
-    #filters label:has(> input[type="checkbox"]:checked):nth-child(6) {
-        @apply outline-blue-700 text-blue-400
-    }
+  .custom-tr {
+    @apply hover:bg-secondary/50 border-b border-border/70 duration-tr w-full;
+  }
 
-    .custom-tr {
-        @apply hover:bg-dark border-b border-border duration-tr w-full;
-    }
+  .custom-td {
+    @apply p-1 sm:p-2 md:p-4;
+  }
 
-    .custom-td {
-        @apply p-1 sm:p-2 md:p-4;
-    }
+  .custom-td:nth-child(2) {
+    @apply text-xs sm:text-lg sm:w-auto w-full;
+  }
 
-    .custom-td:nth-child(2) {
-        @apply text-xs sm:text-lg sm:w-auto w-full;
-    }
+  .avatar-img {
+    @apply w-[40%] md:w-[60%] rounded-md ring-1 ring-border/70;
+  }
 
-    .avatar-img {
-        @apply w-[40%] md:w-[60%] rounded-md;
-    }
+  .custom-damage {
+    @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md p-0.5 sm:px-2.5 sm:py-0.5 text-xs font-light sm:font-light;
+  }
 
-    .custom-damage {
-        @apply border-2 bg-transparent text-white shadow-sm flex justify-center items-center rounded-md p-0.5 sm:px-2.5 sm:py-0.5 text-xs font-light sm:font-light;
-    }
+  .custom-damage-main {
+    @apply border-primary;
+  }
 
-    .custom-damage-main {
-        @apply border-primary;
-    }
+  .custom-damage-secondary {
+    @apply border-transparent;
+  }
 
-    .custom-damage-secondary {
-        @apply border-transparent;
-    }
+  .more-btn {
+    @apply flex items-center justify-center whitespace-nowrap rounded-md text-xs sm:text-sm font-bold bg-primary text-white hover:bg-primary/85 h-10 w-12 sm:w-16 py-1 m-2 sm:py-2 duration-tr;
+  }
 
-    .more-btn {
-        @apply flex items-center justify-center whitespace-nowrap rounded-md text-xs sm:text-sm font-medium bg-primary text-white hover:bg-primary/80 h-10 w-12 sm:w-16 py-1 m-2 sm:py-2;
-    }
+  .custom-role {
+    @apply bg-transparent shadow-sm flex items-center justify-center p-0.5 rounded-md border-2 border-background sm:p-3 text-xs sm:font-light font-light flex-1;
+  }
 
+  .custom-role-flex {
+    @apply flex justify-center items-center sm:flex-row flex-col w-full gap-2 sm:gap-0;
+  }
 
-    .custom-role {
-        @apply bg-transparent shadow-sm flex items-center justify-center p-0.5 rounded-md border-2 border-background sm:p-3 text-xs sm:font-light font-light flex-1;
-    }
+  .custom-role-assassin {
+    @apply text-pink-400 border-pink-700 sm:m-2 w-full;
+  }
 
-    .custom-role-flex {
-        @apply flex justify-center items-center sm:flex-row flex-col w-full gap-2 sm:gap-0
-    }
+  .custom-role-mage {
+    @apply text-violet-400 border-violet-700 sm:m-2 w-full;
+  }
 
-    .custom-role-assassin {
-        @apply text-pink-400 border-pink-700 sm:m-2 w-full;
-    }
+  .custom-role-marksman {
+    @apply text-yellow-400 border-yellow-700 sm:m-2 w-full;
+  }
 
-    .custom-role-mage {
-        @apply text-violet-400 border-violet-700 sm:m-2 w-full;
-    }
+  .custom-role-tank {
+    @apply text-indigo-400 border-indigo-700 sm:m-2 w-full;
+  }
 
-    .custom-role-marksman {
-        @apply text-yellow-400 border-yellow-700 sm:m-2 w-full;
-    }
+  .custom-role-fighter {
+    @apply text-green-400 border-green-700 sm:m-2 w-full;
+  }
 
-    .custom-role-tank {
-        @apply text-indigo-400 border-indigo-700 sm:m-2 w-full;
-    }
+  .custom-role-support {
+    @apply text-slate-400 border-slate-700 sm:m-2 w-full;
+  }
 
-    .custom-role-fighter {
-        @apply text-green-400 border-green-700 sm:m-2 w-full;
-    }
-
-    .custom-role-support {
-        @apply text-slate-400 border-slate-700 sm:m-2 w-full;
-    }
+  #rectangle-images img {
+    @apply h-40 sm:h-48 rounded-lg object-cover ring-1 ring-border/70 shadow-lg shadow-black/20;
+  }
 }

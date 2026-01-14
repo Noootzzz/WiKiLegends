@@ -1,13 +1,21 @@
 // Import the latest LOL version
-import LATEST_VERSION from './fetchVersionAPI.js'
+import GetLolLatestVersions from './fetchVersionAPI.js'
 
-// API endpoint for fetching champion data
-const API_CHAMPION = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/data/en_US/champion`
-const API_SPELLS = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/img/spell`
-const API_PASSIVE = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/img/passive`
+let LATEST_VERSION = null
+let API_CHAMPION = null
+let API_SPELLS = null
+let API_PASSIVE = null
+
+async function ensureVersion() {
+    if (LATEST_VERSION) return
+    LATEST_VERSION = await GetLolLatestVersions()
+    API_CHAMPION = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/data/en_US/champion`
+    API_SPELLS = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/img/spell`
+    API_PASSIVE = `https://ddragon.leagueoflegends.com/cdn/${LATEST_VERSION}/img/passive`
+}
 
 // VARIABLE TO HOLD THE CHAMPION ID
-export let championId = ""
+export let championId = new URLSearchParams(window.location.search).get("id")
 
 // Cache to store fetched champion data to avoid redundant API calls
 let cachedChampionData = null
@@ -20,8 +28,15 @@ async function FetchChampion() {
     }
 
     try {
+        await ensureVersion()
         // GET THE CHAMPION ID FROM THE URL PARAMS
-        championId = new URLSearchParams(window.location.search).get("id")
+        if (!championId) {
+             championId = new URLSearchParams(window.location.search).get("id")
+        }
+        
+        if (!championId) {
+            throw new Error('Champion ID not found in URL parameters')
+        }
         if (!championId) {
             throw new Error('Champion ID not found in URL parameters')
         }
@@ -236,7 +251,6 @@ export async function GetChampionSpellsVideosLinksList() {
                 }
             }
 
-            console.log(championSpellsVideoLinksList)
             return championSpellsVideoLinksList
         }
     } catch (error) {

@@ -35,8 +35,16 @@ const htmlChampionEnemyTips = document.querySelector("#champion-enemy-tips")
 const htmlRectangleImages = document.querySelector("#rectangle-images")
 const htmlChampionPassiveVideo = document.querySelector("#champion-passive-video")
 
+// Skeleton & Content containers
+const htmlSkeleton = document.querySelector("#champion-skeleton")
+const htmlContent = document.querySelector("#champion-content")
+
 async function DisplaySingleChampion() {
     try {
+        // Ensure skeleton is visible and content hidden initially
+        htmlSkeleton.classList.remove("hidden")
+        htmlContent.classList.add("hidden")
+
         // Fetch champion data
         const [
             championName,
@@ -96,7 +104,7 @@ async function DisplaySingleChampion() {
         if (championSpellsVideosLinksList[0] !== "NA") {
             const videoButton = document.createElement("button")
             videoButton.textContent = "See the video"
-            videoButton.classList.add("p-2", "rounded-md", "bg-primary", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm")
+            videoButton.classList.add("wl-btn-sm", "ml-auto")
 
             videoButton.addEventListener("click", () => {
                 showModal(championSpellsVideosLinksList[0])
@@ -105,7 +113,7 @@ async function DisplaySingleChampion() {
             htmlChampionPassiveVideo.appendChild(videoButton)
         } else {
             const spellVideoPlaceholder = document.createElement("div")
-            spellVideoPlaceholder.classList.add("p-2", "rounded-md", "bg-accent", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm") // Styles pour la placeholder
+            spellVideoPlaceholder.classList.add("wl-pill", "bg-accent", "border-accent", "ml-auto")
             spellVideoPlaceholder.textContent = "No video available" // Placeholder si aucune vidéo disponible
             htmlChampionPassiveVideo.appendChild(spellVideoPlaceholder)
         }
@@ -115,7 +123,7 @@ async function DisplaySingleChampion() {
         const spellListNames = ["Q", "W", "E", "R"]
         championSpells.forEach((spell, index) => {
             const spellElement = document.createElement("div")
-            spellElement.classList.add("flex", "flex-col", "bg-background", "border", "border-border", "rounded-md", "p-4", "gap-4", "text-white")
+            spellElement.classList.add("wl-card", "wl-card-hover", "flex", "flex-col", "p-4", "gap-4", "text-white")
 
             const small = document.createElement("small")
             small.textContent = `${spellListNames[index]} Spell`
@@ -146,7 +154,7 @@ async function DisplaySingleChampion() {
             if (championSpellsVideosLinksList[index + 1] !== "NA") {
                 const videoButton = document.createElement("button")
                 videoButton.textContent = "See the video"
-                videoButton.classList.add("sm:mr-auto", "bg-primary", "px-2", "py-2", "rounded-md", "self-end", "text-nowrap")
+                videoButton.classList.add("wl-btn-sm", "sm:mr-auto", "self-end")
 
                 videoButton.addEventListener("click", () => {
                     showModal(championSpellsVideosLinksList[index + 1])
@@ -155,7 +163,7 @@ async function DisplaySingleChampion() {
                 spellStats.appendChild(videoButton)
             } else {
                 const spellVideoPlaceholder = document.createElement("div")
-                spellVideoPlaceholder.classList.add("p-2", "rounded-md", "bg-accent", "ml-auto", "text-nowrap", "text-xs", "sm:text-sm") // Styles pour la placeholder
+                spellVideoPlaceholder.classList.add("wl-pill", "bg-accent", "border-accent", "ml-auto")
                 spellVideoPlaceholder.textContent = "No Video Available" // Placeholder si aucune vidéo disponible
                 spellStats.appendChild(spellVideoPlaceholder)
             }
@@ -167,9 +175,9 @@ async function DisplaySingleChampion() {
             const spellRange = document.createElement("div")
             spellRange.textContent = `Range(s): ${spell.range}`
 
-            spellCooldown.classList.add("text-nowrap", "bg-border", "rounded-md", "p-2", "w-full", "text-center")
-            spellCost.classList.add("text-nowrap", "bg-border", "rounded-md", "p-2", "w-full", "text-center")
-            spellRange.classList.add("text-nowrap", "bg-border", "rounded-md", "p-2", "w-full", "text-center")
+            spellCooldown.classList.add("text-nowrap", "bg-secondary/30", "border", "border-border/70", "rounded-md", "p-2", "w-full", "text-center")
+            spellCost.classList.add("text-nowrap", "bg-secondary/30", "border", "border-border/70", "rounded-md", "p-2", "w-full", "text-center")
+            spellRange.classList.add("text-nowrap", "bg-secondary/30", "border", "border-border/70", "rounded-md", "p-2", "w-full", "text-center")
 
             spellStats.appendChild(spellRange)
             spellStats.appendChild(spellCost)
@@ -221,8 +229,8 @@ async function DisplaySingleChampion() {
         const updateBars = (sectionId, scoreId, value) => {
             const bars = document.getElementById(sectionId).children
             for (let i = 0; i < bars.length; i++) {
-                bars[i].classList.remove('bg-white', 'bg-border')
-                bars[i].classList.add(i < value ? 'bg-white' : 'bg-border')
+                bars[i].classList.remove('bg-primary', 'bg-border')
+                bars[i].classList.add(i < value ? 'bg-primary' : 'bg-border')
             }
             document.getElementById(scoreId).textContent = value > 0 ? `${value}/10` : "No Data"
         }
@@ -243,12 +251,25 @@ async function DisplaySingleChampion() {
 
         // Display rectangle images
         htmlRectangleImages.textContent = ""
-        championSkinsList.forEach(skin => {
+        
+        // Use Promise.all to fetch all URLs concurrently since GetRectangleChampionImageURL is async
+        const skinImagePromises = championSkinsList.map(async (skin) => {
+            const url = await GetRectangleChampionImageURL(championId, skin)
+            return { url, skin }
+        })
+        
+        const skinImages = await Promise.all(skinImagePromises)
+
+        skinImages.forEach(({ url, skin }) => {
             const image = document.createElement("img")
-            image.src = GetRectangleChampionImageURL(championId, skin)
+            image.src = url
             image.alt = `${championId} Skin`
             htmlRectangleImages.appendChild(image)
         })
+        
+        // Hide skeleton and show content after everything is ready
+        htmlSkeleton.classList.add("hidden")
+        htmlContent.classList.remove("hidden")
 
     } catch (error) {
         console.error(`ERROR DISPLAY SINGLE CHAMPION: ${error}`)

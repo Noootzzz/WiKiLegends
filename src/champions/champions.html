@@ -1,188 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../output.css">
-    <link rel="shortcut icon" href="../img/Logo_WikiLegends.png" type="image/png">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="shortcut icon"
+      href="../img/Logo_WikiLegends.png"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
     <title>Champions</title>
-</head>
+  </head>
 
+  <body
+    class="font-poppins bg-gradient-to-br from-background via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen grid grid-rows-[auto_1fr_auto]"
+  >
+    <header class="wl-header">
+      <nav class="wl-container flex items-center justify-between py-4">
+        <a class="wl-brand" href="../index.html">
+          <span class="wl-title-badge">Wiki</span>
+          <span class="text-lg sm:text-xl">Legends</span>
+        </a>
 
-<body
-    class="font-poppins bg-gradient-to-r from-background from-30% via-dark to-secondary bg-no-repeat bg-cover overflow-x-hidden min-h-screen relative grid grid-rows-[auto_1fr_auto] gap-20">
-    <header class="flex justify-between items-center text-white text-lg font-semibold bg-transparent w-full">
-        <nav class="flex items-center justify-between flex-wrap border-b border-border p-6 w-full z-10">
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <a class="text-white no-underline hover:text-white hover:no-underline" href="../index.html">
-                    <h1
-                        class="relative flex flex-wrap items-center justify-center gap-2 text-sm font-bold max-lg:text-center lg:text-lg text-white">
-                        <span class="rounded-md bg-primary px-2 py-1 lg:px-2 lg:py-1">Wiki</span>Legends
-                    </h1>
-                </a>
-            </div>
+        <div class="block lg:hidden">
+          <button
+            id="nav-toggle"
+            aria-label="Toggle menu"
+            aria-controls="nav-content"
+            class="flex items-center px-3 py-2 border rounded-md text-white border-border/70 bg-secondary/10 hover:bg-secondary/30 duration-tr"
+          >
+            <svg
+              class="fill-current h-5 w-4"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
 
-            <div class="block lg:hidden">
-                <button id="nav-toggle"
-                    class="flex items-center px-3 py-2 border-2 rounded-md text-white border-white hover:text-primary hover:border-primary">
-                    <svg class="fill-current h-5 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                    </svg>
-                </button>
-            </div>
-
-            <div class="w-full flex-grow lg:items-center lg:w-auto hidden lg:flex pt-6 lg:pt-0" id="nav-content">
-                <ul class="list-reset lg:flex justify-end flex-1 items-center gap-10">
-                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
-                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                            href="#">Items</a>
-                    </li>
-                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
-                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                            href="#">Champions</a>
-                    </li>
-                    <li class="hover:bg-primary hover:-translate-y-2 duration-tr rounded-md p-2">
-                        <a class="inline-block text-wborder-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                            href="#">Runes</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="w-full lg:w-auto hidden lg:block lg:flex" id="nav-content">
+          <ul
+            class="list-reset flex flex-col lg:flex-row justify-start lg:justify-end items-start lg:items-center gap-2 pt-4 lg:pt-0"
+          >
+            <li><a class="wl-navlink" href="#">Items</a></li>
+            <li>
+              <a class="wl-navlink" href="../champions/champions.html"
+                >Champions</a
+              >
+            </li>
+            <li><a class="wl-navlink" href="#">Runes</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <main class="flex flex-col justify-start items-center gap-20 w-full ">
-        <h1
-            class="relative flex flex-wrap items-center justify-center gap-2 text-4xl font-bold max-lg:text-center lg:text-5xl text-white">
-            <span class="rounded-md bg-primary px-2 py-1 lg:px-4 lg:py-2">Champions</span>Collection
+    <main class="wl-container py-10 sm:py-12">
+      <div class="text-center space-y-3">
+        <h1 class="wl-title flex flex-wrap justify-center gap-2">
+          <span class="wl-title-badge">Champions</span><span>Collection</span>
         </h1>
+      </div>
 
-        <div class="space-y-1 flex justify-center flex-col items-center w-full">
+      <div class="mt-10 flex justify-center">
+        <div class="w-full max-w-xl">
+          <input
+            class="wl-input"
+            id="champion-search-input"
+            placeholder="Type a name..."
+            autocomplete="off"
+            value=""
+          />
+        </div>
+      </div>
+
+      <div
+        id="filters"
+        class="wl-card p-3 sm:p-4 mt-8 text-grey flex flex-col items-stretch justify-center gap-3"
+      >
+        <fieldset class="flex justify-center items-center gap-2 w-full">
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex flex-1 justify-center items-center flex-col gap-2 duration-tr"
+          >
             <input
-                class="shadow-sm h-10 w-2/4 sm:w-2/5 rounded-md caret-white text-white border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-grey focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                id="champion-search-input" placeholder="Type a name..." autocomplete="off" value="">
+              type="radio"
+              name="sortOrder"
+              id="sortAlphabetical"
+              value="alphabetical"
+              checked
+              class="hidden"
+            />
+            <span class="radio-label whitespace-nowrap text-xs sm:text-sm"
+              >A-Z</span
+            >
+          </label>
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex flex-1 justify-center items-center flex-col gap-2 duration-tr"
+          >
+            <input
+              type="radio"
+              name="sortOrder"
+              id="sortReverseAlphabetical"
+              value="reverseAlphabetical"
+              class="hidden"
+            />
+            <span class="radio-label whitespace-nowrap text-xs sm:text-sm"
+              >Z-A</span
+            >
+          </label>
+        </fieldset>
+
+        <fieldset
+          class="grid grid-cols-2 sm:grid-cols-3 lg:flex justify-center items-center gap-2 w-full"
+        >
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex justify-center items-center gap-1.5 duration-tr"
+          >
+            <input
+              type="checkbox"
+              id="roleAssassin"
+              value="Assassin"
+              class="hidden"
+            />
+            <img
+              src="../img/controller_icon.webp"
+              alt="assassin icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="checkbox-label text-xs whitespace-nowrap"
+              >Assassin</span
+            >
+          </label>
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex justify-center items-center gap-1.5 duration-tr"
+          >
+            <input
+              type="checkbox"
+              id="roleFighter"
+              value="Fighter"
+              class="hidden"
+            />
+            <img
+              src="../img/fighter_icon"
+              alt="fighter icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="checkbox-label text-xs whitespace-nowrap"
+              >Fighter</span
+            >
+          </label>
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex justify-center items-center gap-1.5 duration-tr"
+          >
+            <input type="checkbox" id="roleMage" value="Mage" class="hidden" />
+            <img
+              src="../img/mage_icon"
+              alt="mage icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="checkbox-label text-xs whitespace-nowrap">Mage</span>
+          </label>
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex justify-center items-center gap-1.5 duration-tr"
+          >
+            <input
+              type="checkbox"
+              id="roleMarksman"
+              value="Marksman"
+              class="hidden"
+            />
+            <img
+              src="../img/marksman_icon.png"
+              alt="mage icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="checkbox-label text-xs whitespace-nowrap"
+              >Marksman</span
+            >
+          </label>
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex justify-center items-center gap-1.5 duration-tr"
+          >
+            <input
+              type="checkbox"
+              id="roleSupport"
+              value="Support"
+              class="hidden"
+            />
+            <img
+              src="../img/controller_icon.webp"
+              alt="support icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="checkbox-label text-xs whitespace-nowrap"
+              >Support</span
+            >
+          </label>
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex justify-center items-center gap-1.5 duration-tr"
+          >
+            <input type="checkbox" id="roleTank" value="Tank" class="hidden" />
+            <img
+              src="../img/tank_icon.webp"
+              alt="tank icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="checkbox-label text-xs whitespace-nowrap">Tank</span>
+          </label>
+        </fieldset>
+
+        <fieldset class="flex justify-center items-center gap-2 w-full">
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex flex-1 justify-center items-center gap-1.5 duration-tr"
+          >
+            <input
+              type="radio"
+              name="damageType"
+              id="damageMagic"
+              value="Magic"
+              class="hidden"
+            />
+            <img
+              src="../img/magic_icon.png"
+              alt="magic icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="radio-label text-xs whitespace-nowrap">Magic</span>
+          </label>
+          <label
+            class="hover:bg-secondary/40 border rounded-md cursor-pointer border-border/70 p-2 sm:p-3 flex flex-1 justify-center items-center gap-1.5 duration-tr"
+          >
+            <input
+              type="radio"
+              name="damageType"
+              id="damagePhysic"
+              value="Physic"
+              class="hidden"
+            />
+            <img
+              src="../img/armor_icon.png"
+              alt="armor icon"
+              class="w-4 h-4 flex-shrink-0"
+            />
+            <span class="radio-label text-xs whitespace-nowrap">Physic</span>
+          </label>
+        </fieldset>
+
+        <button
+          id="resetFilters"
+          class="border rounded-md cursor-pointer border-accent p-2.5 sm:p-3 text-white text-xs sm:text-sm hover:bg-hover-accent duration-tr w-full"
+        >
+          Reset
+        </button>
+      </div>
+
+      <div class="relative w-full text-white mt-10">
+        <div class="wl-card overflow-hidden">
+          <table id="champions-list" class="w-full">
+            <thead
+              class="border-border/70 text-xs sm:text-lg text-primary bg-secondary/20"
+            >
+              <tr class="border border-border">
+                <th
+                  class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12"
+                >
+                  Avatar
+                </th>
+                <th
+                  class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-4/12"
+                >
+                  Name
+                </th>
+                <th
+                  class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12"
+                >
+                  Categorie(s)
+                </th>
+                <th
+                  class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12 sm:table-cell hidden"
+                >
+                  Damage
+                </th>
+                <th
+                  class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12"
+                >
+                  Links
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="champions-tbody"
+              class="border border-border text-grey w-auto"
+            >
+              <!-- Rows added dynamically -->
+            </tbody>
+          </table>
         </div>
-
-        <div id="filters"
-            class="text-grey flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-10 w-full md:w-3/4 md:p-10 p-4">
-            <fieldset class="flex justify-center items-center gap-2 w-full">
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center flex-col gap-2">
-                    <input type="radio" name="sortOrder" id="sortAlphabetical" value="alphabetical" checked
-                        class="hidden">
-                    <span class="radio-label whitespace-nowrap">A-Z</span>
-                </label>
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center flex-col gap-2">
-                    <input type="radio" name="sortOrder" id="sortReverseAlphabetical" value="reverseAlphabetical"
-                        class="hidden">
-                    <span class="radio-label whitespace-nowrap">Z-A</span>
-                </label>
-            </fieldset>
-
-            <fieldset class="flex justify-center items-center gap-4 flex-wrap sm:flex-wrap md:flex-nowrap w-full">
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="checkbox" id="roleAssassin" value="Assassin" class="hidden">
-                    <img src="../img/controller_icon.webp" alt="assassin icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="checkbox-label">Assassin</span>
-                </label>
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="checkbox" id="roleFighter" value="Fighter" class="hidden">
-                    <img src="../img/fighter_icon" alt="fighter icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="checkbox-label">Fighter</span>
-                </label>
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="checkbox" id="roleMage" value="Mage" class="hidden">
-                    <img src="../img/mage_icon" alt="mage icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="checkbox-label">Mage</span>
-                </label>
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="checkbox" id="roleMarksman" value="Marksman" class="hidden">
-                    <img src="../img/marksman_icon.png" alt="mage icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="checkbox-label">Marksman</span>
-                </label>
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="checkbox" id="roleSupport" value="Support" class="hidden">
-                    <img src="../img/controller_icon.webp" alt="support icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="checkbox-label">Support</span>
-                </label>
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="checkbox" id="roleTank" value="Tank" class="hidden">
-                    <img src="../img/tank_icon.webp" alt="tank icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="checkbox-label">Tank</span>
-                </label>
-            </fieldset>
-
-            <fieldset class="flex justify-center items-center gap-2 w-full">
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="radio" name="damageType" id="damageMagic" value="Magic" class="hidden">
-                    <img src="../img/magic_icon.png" alt="magic icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="radio-label">Magic</span>
-                </label>
-                <label
-                    class="hover:bg-dark border rounded-md cursor-pointer border-border p-2 sm:p-4 flex flex-1 justify-center items-center gap-2">
-                    <input type="radio" name="damageType" id="damagePhysic" value="Physic" class="hidden">
-                    <img src="../img/armor_icon.png" alt="armor icon" class="w-[2.5vw] sm:w-[2vw] md:w-[1vw]">
-                    <span class="radio-label">Physic</span>
-                </label>
-            </fieldset>
-
-            <button id="resetFilters"
-                class="border rounded-md cursor-pointer border-accent p-4 text-white hover:bg-hover-accent duration-tr">Reset</button>
+        <div
+          id="error-message"
+          class="text-accent font-bold text-lg rounded-md border border-border text-center w-3/4 p-6 my-4 m-auto hidden"
+        >
+          No champions found.
         </div>
-
-
-        <div class="relative w-full text-white">
-            <table id="champions-list" class="bg-background m-auto w-[90%] sm:w-3/4">
-                <thead class="border-border text-xs sm:text-lg text-primary">
-                    <tr class="border border-border">
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12">Avatar
-                        </th>
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-4/12">Name
-                        </th>
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12">
-                            Categorie(s)</th>
-                        <th
-                            class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-2/12 sm:table-cell hidden">
-                            Damage
-                        </th>
-                        <th class="h-12 px-2 sm:px-4 text-left align-middle font-medium w-full flex-1 sm:w-1/12">Links
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="champions-tbody" class="border border-border text-grey w-auto">
-                    <!-- Rows added dynamically -->
-                </tbody>
-            </table>
-            <div id="error-message"
-                class="text-accent font-bold text-lg rounded-md border border-border text-center w-3/4 p-6 my-4 m-auto hidden">
-                No champions found.</div>
-        </div>
-
+      </div>
     </main>
 
-    <footer class="text-center p-8 text-grey w-full ">
-        <h2></h2>
+    <footer class="wl-container text-center py-8 text-grey w-full">
+      <h2></h2>
     </footer>
 
-    <a href="#"
-        class="bg-primary p-2 rounded-md fixed bottom-3 right-2.5 sm:bottom-5 sm:right-5 md:bottom-7 md:right-7 text-white border-dark">UP</a>
+    <a
+      href="#"
+      class="bg-primary/90 hover:bg-primary p-2 px-3 rounded-md fixed bottom-3 right-2.5 sm:bottom-5 sm:right-5 md:bottom-7 md:right-7 text-white border border-border/70 shadow-lg shadow-black/30 duration-tr"
+      >UP</a
+    >
 
     <script type="module" src="../js/displayAllChampions.js"></script>
     <script src="../js/toggleHeader.js"></script>
     <script src="../js/searchChampion.js"></script>
     <script src="../js/filtersChampions.js"></script>
     <script type="module" src="../js/dynamicDate.js"></script>
-
-</body>
-
+  </body>
 </html>
